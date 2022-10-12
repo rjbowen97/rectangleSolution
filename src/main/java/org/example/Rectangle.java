@@ -5,62 +5,32 @@ import java.util.Comparator;
 
 public class Rectangle implements Comparator<Point> {
 
-    Point topLeftPoint;
-    Point topRightPoint;
     Point bottomLeftPoint;
-    Point bottomRightPoint;
+    Point topRightPoint;
 
-    // todo constructor taking only two points
-
-    public Rectangle(Point point1, Point point2, Point point3, Point point4) {
-        ArrayList<Point> points = new ArrayList<>();
-        points.add(point1);
-        points.add(point2);
-        points.add(point3);
-        points.add(point4);
-
-        System.out.println(points);
-        points.sort(this);
-        System.out.println(points);
-
-
-        // todo - Point assignment
-
-
+    public Rectangle(ArrayList<Point> points) {
         // todo - validate the points create a rectangle
 
-        this.topLeftPoint = point1;
-        this.topRightPoint = point2;
-        this.bottomLeftPoint = point3;
-        this.bottomRightPoint = point4;
+        points.sort(this);
+        this.bottomLeftPoint = points.get(0);
+        this.topRightPoint = points.get(3);
     }
 
     @Override
     public String toString() {
         return "Rectangle{" +
-                "topLeftPoint=" + topLeftPoint +
-                ", topRightPoint=" + topRightPoint +
                 ", bottomLeftPoint=" + bottomLeftPoint +
-                ", bottomRightPoint=" + bottomRightPoint +
+                ", topRightPoint=" + topRightPoint +
                 '}';
     }
 
     /*
-        This will compare points in a way that sorts them clockwise,
-        starting from the top left corner and ending
-        in the bottom left corner
+        We only need two vertices that are opposite of each other for rectangle calculations.
+        So, by sorting the points based on position, the bottom left point of the rectangle
+        is at index 0 and the top right point of the rectangle is at index 3.
      */
     @Override
     public int compare(Point point1, Point point2) {
-
-        if (point1.getX() < point2.getX()) {
-            if (point1.getY() > point2.getY()) {
-                return 1;
-            } else {
-                return -1;
-            }
-        }
-
-        return 0;
+        return Integer.compare(point1.getX() + point1.getY(), point2.getX() + point2.getY());
     }
 }
