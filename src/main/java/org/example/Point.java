@@ -1,6 +1,6 @@
 package org.example;
 
-public class Point {
+public class Point implements Comparable<Point> {
 
     int x;
     int y;
@@ -24,6 +24,16 @@ public class Point {
 
     public void setY(int y) {
         this.y = y;
+    }
+
+    /*
+        Compares the position of this point to another point based on its position relative to
+        the origin (x=0,y=0)
+     */
+    @Override
+    public int compareTo(Point otherPoint) {
+        return Integer.compare(this.getX() + this.getY(), otherPoint.getX() + otherPoint.getY());
+
     }
 
     @Override
