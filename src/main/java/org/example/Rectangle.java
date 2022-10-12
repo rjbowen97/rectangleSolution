@@ -6,6 +6,7 @@ import java.util.Comparator;
 public class Rectangle implements Comparator<Point> {
 
     Point bottomLeftPoint;
+
     Point topRightPoint;
 
     public Rectangle(ArrayList<Point> points) {
@@ -16,14 +17,6 @@ public class Rectangle implements Comparator<Point> {
         this.topRightPoint = points.get(3);
     }
 
-    @Override
-    public String toString() {
-        return "Rectangle{" +
-                ", bottomLeftPoint=" + bottomLeftPoint +
-                ", topRightPoint=" + topRightPoint +
-                '}';
-    }
-
     /*
         We only need two vertices that are opposite of each other for rectangle calculations.
         So, by sorting the points based on position, the bottom left point of the rectangle
@@ -32,5 +25,29 @@ public class Rectangle implements Comparator<Point> {
     @Override
     public int compare(Point point1, Point point2) {
         return Integer.compare(point1.getX() + point1.getY(), point2.getX() + point2.getY());
+    }
+
+    @Override
+    public String toString() {
+        return "Rectangle{" +
+                ", bottomLeftPoint=" + bottomLeftPoint +
+                ", topRightPoint=" + topRightPoint +
+                '}';
+    }
+
+    public Point getBottomLeftPoint() {
+        return bottomLeftPoint;
+    }
+
+    public void setBottomLeftPoint(Point bottomLeftPoint) {
+        this.bottomLeftPoint = bottomLeftPoint;
+    }
+
+    public Point getTopRightPoint() {
+        return topRightPoint;
+    }
+
+    public void setTopRightPoint(Point topRightPoint) {
+        this.topRightPoint = topRightPoint;
     }
 }
