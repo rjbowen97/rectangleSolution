@@ -8,12 +8,23 @@ public class Rectangle {
 
     Point topRightPoint;
 
-    public Rectangle(ArrayList<Point> points) {
-        // todo - validate the points create a rectangle
+    public Rectangle(ArrayList<Point> points) throws RectangleException {
+        if (pointsFormAValidRectangle(points)) {
+            points.sort(Point::compareTo);
+            this.bottomLeftPoint = points.get(0);
+            this.topRightPoint = points.get(3);
 
-        points.sort(Point::compareTo);
-        this.bottomLeftPoint = points.get(0);
-        this.topRightPoint = points.get(3);
+        }
+
+        else {
+            throw new RectangleException("ERROR: A rectangle only has 4 points.");
+        }
+    }
+
+    private boolean pointsFormAValidRectangle(ArrayList<Point> points) {
+
+        return points.size() == 4;
+
     }
 
     @Override
@@ -38,5 +49,12 @@ public class Rectangle {
 
     public void setTopRightPoint(Point topRightPoint) {
         this.topRightPoint = topRightPoint;
+    }
+
+
+    public static class RectangleException extends Exception {
+        public RectangleException(String message) {
+            super(message);
+        }
     }
 }
