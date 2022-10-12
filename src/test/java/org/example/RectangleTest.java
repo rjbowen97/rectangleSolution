@@ -51,6 +51,20 @@ class RectangleTest {
     }
 
     @Test
+    void rectangleWithDuplicatePointsThrowsException() {
+        ArrayList<Point> duplicatePoints = new ArrayList<>();
+        duplicatePoints.add(new Point(1, 2));
+        duplicatePoints.add(new Point(1, 2));
+        duplicatePoints.add(new Point(1, 2));
+        duplicatePoints.add(new Point(1, 2));
+
+
+        assertThrows(Rectangle.RectangleException.class, () -> {
+            new Rectangle(duplicatePoints);
+        });
+    }
+
+    @Test
     void rectangleWithTooFewPointsThrowsException() {
         assertThrows(Rectangle.RectangleException.class, () -> {
             new Rectangle(tooFewPoints);

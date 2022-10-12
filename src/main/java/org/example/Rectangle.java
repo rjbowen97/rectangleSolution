@@ -1,6 +1,7 @@
 package org.example;
 
 import java.util.ArrayList;
+import java.util.HashSet;
 
 public class Rectangle {
 
@@ -22,8 +23,9 @@ public class Rectangle {
     }
 
     private boolean pointsFormAValidRectangle(ArrayList<Point> points) {
+        HashSet<Point> uniquePoints = new HashSet<>(points);
 
-        return points.size() == 4;
+        return uniquePoints.size() == 4;
 
     }
 

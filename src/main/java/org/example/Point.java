@@ -1,5 +1,7 @@
 package org.example;
 
+import java.util.Objects;
+
 public class Point implements Comparable<Point> {
 
     int x;
@@ -34,6 +36,19 @@ public class Point implements Comparable<Point> {
     public int compareTo(Point otherPoint) {
         return Integer.compare(this.getX() + this.getY(), otherPoint.getX() + otherPoint.getY());
 
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        Point point = (Point) o;
+        return x == point.x && y == point.y;
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(x, y);
     }
 
     @Override
