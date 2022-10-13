@@ -8,12 +8,16 @@ import java.util.HashSet;
 public class Rectangle {
     Corner bottomLeftCorner;
     Corner topRightCorner;
+    Corner topLeftCorner;
+    Corner bottomRightCorner;
 
     public Rectangle(ArrayList<Corner> corners) throws RectangleException {
         if (cornersFormAValidRectangle(corners)) {
             corners.sort(Corner::compareTo);
             this.bottomLeftCorner = corners.get(0);
             this.topRightCorner = corners.get(3);
+            this.topLeftCorner = new Corner(getLowerX(), getUpperY());
+            this.bottomRightCorner = new Corner(getUpperX(), getLowerY());
 
         } else {
             throw new RectangleException("ERROR: A rectangle only has 4 corners.");
@@ -58,14 +62,6 @@ public class Rectangle {
         return this.topRightCorner.getY();
     }
 
-    public Corner getTopLeftCorner() {
-        return new Corner(getLowerX(), getUpperY());
-    }
-
-    public Corner getBottomRightCorner() {
-        return new Corner(getUpperX(), getLowerY());
-    }
-
     @Override
     public String toString() {
         return "Rectangle{" +
@@ -90,6 +86,21 @@ public class Rectangle {
         this.topRightCorner = topRightCorner;
     }
 
+    public Corner getTopLeftCorner() {
+        return topLeftCorner;
+    }
+
+    public void setTopLeftCorner(Corner topLeftCorner) {
+        this.topLeftCorner = topLeftCorner;
+    }
+
+    public Corner getBottomRightCorner() {
+        return bottomRightCorner;
+    }
+
+    public void setBottomRightCorner(Corner bottomRightCorner) {
+        this.bottomRightCorner = bottomRightCorner;
+    }
 
     public static class RectangleException extends Exception {
         public RectangleException(String message) {
