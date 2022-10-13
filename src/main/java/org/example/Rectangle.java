@@ -6,7 +6,6 @@ import java.util.HashSet;
 public class Rectangle {
 
     Point bottomLeftPoint;
-
     Point topRightPoint;
 
     public Rectangle(ArrayList<Point> points) throws RectangleException {
@@ -15,18 +14,17 @@ public class Rectangle {
             this.bottomLeftPoint = points.get(0);
             this.topRightPoint = points.get(3);
 
-        }
-
-        else {
+        } else {
             throw new RectangleException("ERROR: A rectangle only has 4 points.");
         }
     }
 
     private boolean pointsFormAValidRectangle(ArrayList<Point> points) {
+        boolean correctNumberOfPoints = points.size() == 4;
         HashSet<Point> uniquePoints = new HashSet<>(points);
 
-        return uniquePoints.size() == 4;
-
+        boolean correctNumberOfUniquePoints = uniquePoints.size() == 4;
+        return correctNumberOfPoints && correctNumberOfUniquePoints;
     }
 
     @Override
