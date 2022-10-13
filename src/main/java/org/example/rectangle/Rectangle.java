@@ -1,5 +1,7 @@
 package org.example.rectangle;
 
+import org.example.cartesian.Range;
+
 import java.util.ArrayList;
 import java.util.HashSet;
 
@@ -31,6 +33,14 @@ public class Rectangle {
         }
 
         return true;
+    }
+
+    public Range getXRange() {
+        return new Range(this.getBottomLeftCorner().getX(), this.getTopRightCorner().getX());
+    }
+
+    public Range getYRange() {
+        return new Range(this.getBottomLeftCorner().getY(), this.getTopRightCorner().getY());
     }
 
     @Override
