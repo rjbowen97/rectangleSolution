@@ -1,6 +1,8 @@
 package org.example.rectangle;
 
-public class Corner extends org.example.CartesianPoint implements Comparable<Corner> {
+import org.example.cartesian.Point;
+
+public class Corner extends Point implements Comparable<Corner> {
 
     public Corner(int x, int y) {
         super(x, y);

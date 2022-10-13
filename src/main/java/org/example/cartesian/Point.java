@@ -1,12 +1,12 @@
-package org.example;
+package org.example.cartesian;
 
 import java.util.Objects;
 
-public class CartesianPoint {
+public class Point {
     int x;
     int y;
 
-    public CartesianPoint(int x, int y) {
+    public Point(int x, int y) {
         this.x = x;
         this.y = y;
     }
@@ -31,8 +31,8 @@ public class CartesianPoint {
     public boolean equals(Object o) {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
-        CartesianPoint cartesianPoint = (CartesianPoint) o;
-        return x == cartesianPoint.x && y == cartesianPoint.y;
+        Point point = (Point) o;
+        return x == point.x && y == point.y;
     }
 
     @Override
