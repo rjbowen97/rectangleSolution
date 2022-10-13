@@ -5,6 +5,7 @@ import org.junit.jupiter.api.Test;
 
 import java.util.ArrayList;
 
+import static org.junit.jupiter.api.Assertions.assertFalse;
 import static org.junit.jupiter.api.Assertions.assertTrue;
 
 class RectangleAnalyzerTest {
@@ -139,6 +140,21 @@ class RectangleAnalyzerTest {
 
         boolean rectanglesAreIntersecting = RectangleAnalyzer.doRectanglesIntersect(primaryRectangle, otherRectangle);
         assertTrue(rectanglesAreIntersecting);
+
+    }
+
+    @Test
+    void nonIntersectingRectangles() throws Rectangle.RectangleException {
+        ArrayList<Corner> otherRectangleCorners = new ArrayList<>();
+        otherRectangleCorners.add(new Corner(20,30));
+        otherRectangleCorners.add(new Corner(20,50));
+        otherRectangleCorners.add(new Corner(40,30));
+        otherRectangleCorners.add(new Corner(40,50));
+
+        Rectangle otherRectangle = new Rectangle(otherRectangleCorners);
+
+        boolean rectanglesAreIntersecting = RectangleAnalyzer.doRectanglesIntersect(primaryRectangle, otherRectangle);
+        assertFalse(rectanglesAreIntersecting);
 
     }
 }
