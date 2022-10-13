@@ -1,5 +1,7 @@
 package org.example.rectangle;
 
+import org.example.cartesian.Point;
+
 import java.util.ArrayList;
 import java.util.HashSet;
 
@@ -33,20 +35,35 @@ public class Rectangle {
         return true;
     }
 
-    public int getLowerX() {
+    public boolean contains(Point point) {
+        boolean containsPointInXDirection = point.getX() > getLowerX() && point.getX() < getUpperX();
+        boolean containsPointInYDirection = point.getY() > getLowerY() && point.getY() < getUpperY();
+
+        return containsPointInXDirection && containsPointInYDirection;
+    }
+
+    private int getLowerX() {
         return this.bottomLeftCorner.getX();
     }
 
-    public int getLowerY() {
+    private int getLowerY() {
         return this.bottomLeftCorner.getY();
     }
 
-    public int getUpperX() {
+    private int getUpperX() {
         return this.topRightCorner.getX();
     }
 
-    public int getUpperY() {
+    private int getUpperY() {
         return this.topRightCorner.getY();
+    }
+
+    public Corner getTopLeftCorner() {
+        return new Corner(getLowerX(), getUpperY());
+    }
+
+    public Corner getBottomRightCorner() {
+        return new Corner(getUpperX(), getLowerY());
     }
 
     @Override
