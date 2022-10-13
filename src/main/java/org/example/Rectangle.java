@@ -19,12 +19,19 @@ public class Rectangle {
         }
     }
 
-    private boolean pointsFormAValidRectangle(ArrayList<Point> points) {
+    private boolean pointsFormAValidRectangle(ArrayList<Point> points) throws RectangleException {
         boolean correctNumberOfPoints = points.size() == 4;
-        HashSet<Point> uniquePoints = new HashSet<>(points);
+        if (!correctNumberOfPoints) {
+            throw new RectangleException("A Rectangle only has 4 points");
+        }
 
+        HashSet<Point> uniquePoints = new HashSet<>(points);
         boolean correctNumberOfUniquePoints = uniquePoints.size() == 4;
-        return correctNumberOfPoints && correctNumberOfUniquePoints;
+        if (!correctNumberOfUniquePoints) {
+            throw new RectangleException("A Rectangle cannot have duplicate points");
+        }
+
+        return true;
     }
 
     @Override
