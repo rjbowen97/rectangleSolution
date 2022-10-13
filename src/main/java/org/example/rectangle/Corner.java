@@ -1,13 +1,13 @@
-package org.example;
+package org.example.rectangle;
 
 import java.util.Objects;
 
-public class Point implements Comparable<Point> {
+public class Corner implements Comparable<Corner> {
 
     int x;
     int y;
 
-    public Point(int x, int y) {
+    public Corner(int x, int y) {
         this.x = x;
         this.y = y;
     }
@@ -29,12 +29,12 @@ public class Point implements Comparable<Point> {
     }
 
     /*
-        Compares the position of this point to another point based on its position relative to
+        Compares the position of this corner to another corner based on its position relative to
         the origin (x=0,y=0)
      */
     @Override
-    public int compareTo(Point otherPoint) {
-        return Integer.compare(this.getX() + this.getY(), otherPoint.getX() + otherPoint.getY());
+    public int compareTo(Corner otherCorner) {
+        return Integer.compare(this.getX() + this.getY(), otherCorner.getX() + otherCorner.getY());
 
     }
 
@@ -42,8 +42,8 @@ public class Point implements Comparable<Point> {
     public boolean equals(Object o) {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
-        Point point = (Point) o;
-        return x == point.x && y == point.y;
+        Corner corner = (Corner) o;
+        return x == corner.x && y == corner.y;
     }
 
     @Override
@@ -53,7 +53,7 @@ public class Point implements Comparable<Point> {
 
     @Override
     public String toString() {
-        return "Point{" +
+        return "Corner{" +
                 "x=" + x +
                 ", y=" + y +
                 '}';

@@ -1,5 +1,7 @@
 package org.example;
 
+import org.example.rectangle.Corner;
+import org.example.rectangle.Rectangle;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
@@ -10,29 +12,29 @@ import static org.junit.jupiter.api.Assertions.assertThrows;
 
 class RectangleTest {
 
-    ArrayList<Point> validRectanglePoints;
-    ArrayList<Point> tooFewPoints;
-    ArrayList<Point> tooManyPoints;
+    ArrayList<Corner> validRectangleCorners;
+    ArrayList<Corner> tooFewCorners;
+    ArrayList<Corner> tooManyCorners;
 
     @BeforeEach
     void setUp() {
         System.out.println("START - Test Setup");
-        validRectanglePoints = new ArrayList<>();
-        validRectanglePoints.add(new Point(1, 2));
-        validRectanglePoints.add(new Point(4, -3));
-        validRectanglePoints.add(new Point(4, 2));
-        validRectanglePoints.add(new Point(1, -3));
+        validRectangleCorners = new ArrayList<>();
+        validRectangleCorners.add(new Corner(1, 2));
+        validRectangleCorners.add(new Corner(4, -3));
+        validRectangleCorners.add(new Corner(4, 2));
+        validRectangleCorners.add(new Corner(1, -3));
 
-        tooFewPoints = new ArrayList<>(validRectanglePoints);
-        tooFewPoints.remove(0);
+        tooFewCorners = new ArrayList<>(validRectangleCorners);
+        tooFewCorners.remove(0);
 
-        tooManyPoints = new ArrayList<>(validRectanglePoints);
-        tooManyPoints.add(new Point(1, -3));
+        tooManyCorners = new ArrayList<>(validRectangleCorners);
+        tooManyCorners.add(new Corner(1, -3));
 
 
-        System.out.println(validRectanglePoints);
-        System.out.println(tooManyPoints);
-        System.out.println(tooFewPoints);
+        System.out.println(validRectangleCorners);
+        System.out.println(tooManyCorners);
+        System.out.println(tooFewCorners);
 
         System.out.println("END - Test Setup");
 
@@ -41,40 +43,40 @@ class RectangleTest {
 
     @Test
     void newRectangleHasCorrectlyOrderedPoints() throws Rectangle.RectangleException {
-        Rectangle rectangle = new Rectangle(validRectanglePoints);
+        Rectangle rectangle = new Rectangle(validRectangleCorners);
 
-        assertEquals(rectangle.getBottomLeftPoint().getX(), 1);
-        assertEquals(rectangle.getBottomLeftPoint().getY(), -3);
-        assertEquals(rectangle.getTopRightPoint().getX(), 4);
-        assertEquals(rectangle.getTopRightPoint().getY(), 2);
+        assertEquals(rectangle.getBottomLeftCorner().getX(), 1);
+        assertEquals(rectangle.getBottomLeftCorner().getY(), -3);
+        assertEquals(rectangle.getTopRightCorner().getX(), 4);
+        assertEquals(rectangle.getTopRightCorner().getY(), 2);
 
     }
 
     @Test
     void rectangleWithDuplicatePointsThrowsException() {
-        ArrayList<Point> duplicatePoints = new ArrayList<>();
-        duplicatePoints.add(new Point(1, 2));
-        duplicatePoints.add(new Point(1, 2));
-        duplicatePoints.add(new Point(1, 2));
-        duplicatePoints.add(new Point(1, 2));
+        ArrayList<Corner> duplicateCorners = new ArrayList<>();
+        duplicateCorners.add(new Corner(1, 2));
+        duplicateCorners.add(new Corner(1, 2));
+        duplicateCorners.add(new Corner(1, 2));
+        duplicateCorners.add(new Corner(1, 2));
 
 
         assertThrows(Rectangle.RectangleException.class, () -> {
-            new Rectangle(duplicatePoints);
+            new Rectangle(duplicateCorners);
         });
     }
 
     @Test
     void rectangleWithTooFewPointsThrowsException() {
         assertThrows(Rectangle.RectangleException.class, () -> {
-            new Rectangle(tooFewPoints);
+            new Rectangle(tooFewCorners);
         });
     }
 
     @Test
     void rectangleWithTooManyPointsThrowsException() throws Rectangle.RectangleException {
         assertThrows(Rectangle.RectangleException.class, () -> {
-            new Rectangle(tooManyPoints);
+            new Rectangle(tooManyCorners);
         });
     }
 }
