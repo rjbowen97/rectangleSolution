@@ -8,7 +8,7 @@ public class Rectangle {
     Corner topRightCorner;
 
     public Rectangle(ArrayList<Corner> corners) throws RectangleException {
-        if (pointsFormAValidRectangle(corners)) {
+        if (cornersFormAValidRectangle(corners)) {
             corners.sort(Corner::compareTo);
             this.bottomLeftCorner = corners.get(0);
             this.topRightCorner = corners.get(3);
@@ -18,15 +18,15 @@ public class Rectangle {
         }
     }
 
-    private boolean pointsFormAValidRectangle(ArrayList<Corner> corners) throws RectangleException {
-        boolean correctNumberOfPoints = corners.size() == 4;
-        if (!correctNumberOfPoints) {
+    private boolean cornersFormAValidRectangle(ArrayList<Corner> corners) throws RectangleException {
+        boolean correctNumberOfCorners = corners.size() == 4;
+        if (!correctNumberOfCorners) {
             throw new RectangleException("A Rectangle only has 4 corners");
         }
 
         HashSet<Corner> uniqueCorners = new HashSet<>(corners);
-        boolean correctNumberOfUniquePoints = uniqueCorners.size() == 4;
-        if (!correctNumberOfUniquePoints) {
+        boolean correctNumberOfUniqueCorners = uniqueCorners.size() == 4;
+        if (!correctNumberOfUniqueCorners) {
             throw new RectangleException("A Rectangle cannot have duplicate corners");
         }
 
@@ -36,8 +36,8 @@ public class Rectangle {
     @Override
     public String toString() {
         return "Rectangle{" +
-                ", bottomLeftPoint=" + bottomLeftCorner +
-                ", topRightPoint=" + topRightCorner +
+                ", bottomLeftCorner=" + bottomLeftCorner +
+                ", topRightCorner=" + topRightCorner +
                 '}';
     }
 

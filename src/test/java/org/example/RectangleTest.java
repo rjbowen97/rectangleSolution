@@ -42,7 +42,7 @@ class RectangleTest {
     }
 
     @Test
-    void newRectangleHasCorrectlyOrderedPoints() throws Rectangle.RectangleException {
+    void newRectangleHasCorrectlyOrderedCorners() throws Rectangle.RectangleException {
         Rectangle rectangle = new Rectangle(validRectangleCorners);
 
         assertEquals(rectangle.getBottomLeftCorner().getX(), 1);
@@ -53,7 +53,7 @@ class RectangleTest {
     }
 
     @Test
-    void rectangleWithDuplicatePointsThrowsException() {
+    void rectangleWithDuplicateCornersThrowsException() {
         ArrayList<Corner> duplicateCorners = new ArrayList<>();
         duplicateCorners.add(new Corner(1, 2));
         duplicateCorners.add(new Corner(1, 2));
@@ -67,14 +67,14 @@ class RectangleTest {
     }
 
     @Test
-    void rectangleWithTooFewPointsThrowsException() {
+    void rectangleWithTooFewCornersThrowsException() {
         assertThrows(Rectangle.RectangleException.class, () -> {
             new Rectangle(tooFewCorners);
         });
     }
 
     @Test
-    void rectangleWithTooManyPointsThrowsException() throws Rectangle.RectangleException {
+    void rectangleWithTooManyCornersThrowsException() throws Rectangle.RectangleException {
         assertThrows(Rectangle.RectangleException.class, () -> {
             new Rectangle(tooManyCorners);
         });
