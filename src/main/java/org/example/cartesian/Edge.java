@@ -64,12 +64,16 @@ public class Edge {
             if (otherEdge.getStart().getX() == otherEdge.getEnd().getX()) {
                 if (this.start.getX() == otherEdge.getStart().getX()) {
                     if (this.start.getY() > otherEdge.getStart().getY() && this.end.getY() > otherEdge.getEnd().getY()) {
-                        return AdjacencyType.PARTIAL;
+                        if (this.start.getY() < otherEdge.getEnd().getY()) {
+                            return AdjacencyType.PARTIAL;
+                        }
+
                     }
                     if (this.start.getY() < otherEdge.getStart().getY() && this.end.getY() < otherEdge.getEnd().getY()) {
-                        return AdjacencyType.PARTIAL;
+                        if (this.end.getY() > otherEdge.getStart().getY()) {
+                            return AdjacencyType.PARTIAL;
+                        }
                     }
-
                 }
             }
         }

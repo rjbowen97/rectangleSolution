@@ -56,14 +56,14 @@ public class RectangleAnalyzer {
         });
 
         if (adjacencies.size() == 0) {
-           otherRectangleEdges.forEach((currentOtherRectangleEdge) -> {
-            primaryRectangleEdges.forEach((currentPrimaryRectangleEdge) -> {
-                AdjacencyType currentEdgeAdjacencyType = currentOtherRectangleEdge.isAdjacentTo(currentPrimaryRectangleEdge);
-                if (currentEdgeAdjacencyType != AdjacencyType.NONE) {
-                    adjacencies.add(currentEdgeAdjacencyType);
-                }
+            otherRectangleEdges.forEach((currentOtherRectangleEdge) -> {
+                primaryRectangleEdges.forEach((currentPrimaryRectangleEdge) -> {
+                    AdjacencyType currentEdgeAdjacencyType = currentOtherRectangleEdge.isAdjacentTo(currentPrimaryRectangleEdge);
+                    if (currentEdgeAdjacencyType != AdjacencyType.NONE) {
+                        adjacencies.add(currentEdgeAdjacencyType);
+                    }
+                });
             });
-        });
         }
 
         return adjacencies;
