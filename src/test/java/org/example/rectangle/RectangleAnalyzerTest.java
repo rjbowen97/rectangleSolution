@@ -34,122 +34,138 @@ class RectangleAnalyzerTest {
         Rectangle otherRectangle = new Rectangle(otherRectangleCorners);
 
         boolean rectanglesAreIntersecting = RectangleAnalyzer.doRectanglesIntersect(primaryRectangle, otherRectangle);
+        boolean invertedRectanglesAreIntersecting = RectangleAnalyzer.doRectanglesIntersect(otherRectangle, primaryRectangle);
         assertTrue(rectanglesAreIntersecting);
+        assertTrue(invertedRectanglesAreIntersecting);
 
     }
 
     @Test
     void doRectanglesIntersectRight() throws Rectangle.RectangleException {
         ArrayList<Corner> otherRectangleCorners = new ArrayList<>();
-        otherRectangleCorners.add(new Corner(5,-5));
-        otherRectangleCorners.add(new Corner(15,-5));
-        otherRectangleCorners.add(new Corner(5,5));
-        otherRectangleCorners.add(new Corner(15,5));
+        otherRectangleCorners.add(new Corner(5, -5));
+        otherRectangleCorners.add(new Corner(15, -5));
+        otherRectangleCorners.add(new Corner(5, 5));
+        otherRectangleCorners.add(new Corner(15, 5));
 
         Rectangle otherRectangle = new Rectangle(otherRectangleCorners);
 
         boolean rectanglesAreIntersecting = RectangleAnalyzer.doRectanglesIntersect(primaryRectangle, otherRectangle);
+        boolean invertedRectanglesAreIntersecting = RectangleAnalyzer.doRectanglesIntersect(otherRectangle, primaryRectangle);
         assertTrue(rectanglesAreIntersecting);
+        assertTrue(invertedRectanglesAreIntersecting);
 
     }
 
     @Test
     void doRectanglesIntersectBottomRight() throws Rectangle.RectangleException {
         ArrayList<Corner> otherRectangleCorners = new ArrayList<>();
-        otherRectangleCorners.add(new Corner(5,-15));
-        otherRectangleCorners.add(new Corner(15,-15));
-        otherRectangleCorners.add(new Corner(5,-5));
-        otherRectangleCorners.add(new Corner(15,-5));
+        otherRectangleCorners.add(new Corner(5, -15));
+        otherRectangleCorners.add(new Corner(15, -15));
+        otherRectangleCorners.add(new Corner(5, -5));
+        otherRectangleCorners.add(new Corner(15, -5));
 
         Rectangle otherRectangle = new Rectangle(otherRectangleCorners);
 
         boolean rectanglesAreIntersecting = RectangleAnalyzer.doRectanglesIntersect(primaryRectangle, otherRectangle);
+        boolean invertedRectanglesAreIntersecting = RectangleAnalyzer.doRectanglesIntersect(otherRectangle, primaryRectangle);
         assertTrue(rectanglesAreIntersecting);
+        assertTrue(invertedRectanglesAreIntersecting);
 
     }
 
     @Test
     void doRectanglesIntersectBottom() throws Rectangle.RectangleException {
         ArrayList<Corner> otherRectangleCorners = new ArrayList<>();
-        otherRectangleCorners.add(new Corner(-5,-5));
-        otherRectangleCorners.add(new Corner(-5,-15));
-        otherRectangleCorners.add(new Corner(5,-5));
-        otherRectangleCorners.add(new Corner(5,-15));
+        otherRectangleCorners.add(new Corner(-5, -5));
+        otherRectangleCorners.add(new Corner(-5, -15));
+        otherRectangleCorners.add(new Corner(5, -5));
+        otherRectangleCorners.add(new Corner(5, -15));
 
         Rectangle otherRectangle = new Rectangle(otherRectangleCorners);
 
         boolean rectanglesAreIntersecting = RectangleAnalyzer.doRectanglesIntersect(primaryRectangle, otherRectangle);
+        boolean invertedRectanglesAreIntersecting = RectangleAnalyzer.doRectanglesIntersect(otherRectangle, primaryRectangle);
         assertTrue(rectanglesAreIntersecting);
+        assertTrue(invertedRectanglesAreIntersecting);
 
     }
 
     @Test
     void doRectanglesIntersectBottomLeft() throws Rectangle.RectangleException {
         ArrayList<Corner> otherRectangleCorners = new ArrayList<>();
-        otherRectangleCorners.add(new Corner(-15,-15));
-        otherRectangleCorners.add(new Corner(-15,-5));
-        otherRectangleCorners.add(new Corner(-5,-15));
-        otherRectangleCorners.add(new Corner(-5,-5));
+        otherRectangleCorners.add(new Corner(-15, -15));
+        otherRectangleCorners.add(new Corner(-15, -5));
+        otherRectangleCorners.add(new Corner(-5, -15));
+        otherRectangleCorners.add(new Corner(-5, -5));
 
         Rectangle otherRectangle = new Rectangle(otherRectangleCorners);
 
         boolean rectanglesAreIntersecting = RectangleAnalyzer.doRectanglesIntersect(primaryRectangle, otherRectangle);
+        boolean invertedRectanglesAreIntersecting = RectangleAnalyzer.doRectanglesIntersect(otherRectangle, primaryRectangle);
         assertTrue(rectanglesAreIntersecting);
+        assertTrue(invertedRectanglesAreIntersecting);
 
     }
 
     @Test
     void doRectanglesIntersectLeft() throws Rectangle.RectangleException {
         ArrayList<Corner> otherRectangleCorners = new ArrayList<>();
-        otherRectangleCorners.add(new Corner(-15,-5));
-        otherRectangleCorners.add(new Corner(-15,5));
-        otherRectangleCorners.add(new Corner(-5,-5));
-        otherRectangleCorners.add(new Corner(-5,5));
+        otherRectangleCorners.add(new Corner(-15, -5));
+        otherRectangleCorners.add(new Corner(-15, 5));
+        otherRectangleCorners.add(new Corner(-5, -5));
+        otherRectangleCorners.add(new Corner(-5, 5));
 
         Rectangle otherRectangle = new Rectangle(otherRectangleCorners);
 
         boolean rectanglesAreIntersecting = RectangleAnalyzer.doRectanglesIntersect(primaryRectangle, otherRectangle);
+        boolean invertedRectanglesAreIntersecting = RectangleAnalyzer.doRectanglesIntersect(otherRectangle, primaryRectangle);
         assertTrue(rectanglesAreIntersecting);
+        assertTrue(invertedRectanglesAreIntersecting);
 
     }
 
     @Test
     void doRectanglesIntersectTopLeft() throws Rectangle.RectangleException {
         ArrayList<Corner> otherRectangleCorners = new ArrayList<>();
-        otherRectangleCorners.add(new Corner(-15,5));
-        otherRectangleCorners.add(new Corner(-15,15));
-        otherRectangleCorners.add(new Corner(-5,5));
-        otherRectangleCorners.add(new Corner(-5,15));
+        otherRectangleCorners.add(new Corner(-15, 5));
+        otherRectangleCorners.add(new Corner(-15, 15));
+        otherRectangleCorners.add(new Corner(-5, 5));
+        otherRectangleCorners.add(new Corner(-5, 15));
 
         Rectangle otherRectangle = new Rectangle(otherRectangleCorners);
 
         boolean rectanglesAreIntersecting = RectangleAnalyzer.doRectanglesIntersect(primaryRectangle, otherRectangle);
+        boolean invertedRectanglesAreIntersecting = RectangleAnalyzer.doRectanglesIntersect(otherRectangle, primaryRectangle);
         assertTrue(rectanglesAreIntersecting);
+        assertTrue(invertedRectanglesAreIntersecting);
 
     }
 
     @Test
     void doRectanglesIntersectTop() throws Rectangle.RectangleException {
         ArrayList<Corner> otherRectangleCorners = new ArrayList<>();
-        otherRectangleCorners.add(new Corner(-5,5));
-        otherRectangleCorners.add(new Corner(-5,15));
-        otherRectangleCorners.add(new Corner(5,5));
-        otherRectangleCorners.add(new Corner(5,15));
+        otherRectangleCorners.add(new Corner(-5, 5));
+        otherRectangleCorners.add(new Corner(-5, 15));
+        otherRectangleCorners.add(new Corner(5, 5));
+        otherRectangleCorners.add(new Corner(5, 15));
 
         Rectangle otherRectangle = new Rectangle(otherRectangleCorners);
 
         boolean rectanglesAreIntersecting = RectangleAnalyzer.doRectanglesIntersect(primaryRectangle, otherRectangle);
+        boolean invertedRectanglesAreIntersecting = RectangleAnalyzer.doRectanglesIntersect(otherRectangle, primaryRectangle);
         assertTrue(rectanglesAreIntersecting);
+        assertTrue(invertedRectanglesAreIntersecting);
 
     }
 
     @Test
     void nonIntersectingRectangles() throws Rectangle.RectangleException {
         ArrayList<Corner> otherRectangleCorners = new ArrayList<>();
-        otherRectangleCorners.add(new Corner(20,30));
-        otherRectangleCorners.add(new Corner(20,50));
-        otherRectangleCorners.add(new Corner(40,30));
-        otherRectangleCorners.add(new Corner(40,50));
+        otherRectangleCorners.add(new Corner(20, 30));
+        otherRectangleCorners.add(new Corner(20, 50));
+        otherRectangleCorners.add(new Corner(40, 30));
+        otherRectangleCorners.add(new Corner(40, 50));
 
         Rectangle otherRectangle = new Rectangle(otherRectangleCorners);
 
