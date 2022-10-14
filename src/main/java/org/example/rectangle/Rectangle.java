@@ -7,36 +7,40 @@ import java.util.ArrayList;
 import java.util.HashSet;
 
 public class Rectangle {
-    private final Point bottomLeftPoint;
-    private final Point topRightPoint;
-    private final Point topLeftPoint;
-    private final Point bottomRightPoint;
+    private Point bottomLeftPoint;
+    private Point topRightPoint;
+    private Point topLeftPoint;
+    private Point bottomRightPoint;
 
-    private final Edge topEdge;
-    private final Edge rightEdge;
-    private final Edge bottomEdge;
-    private final Edge leftEdge;
+    private Edge topEdge;
+    private Edge rightEdge;
+    private Edge bottomEdge;
+    private Edge leftEdge;
 
     public Rectangle(ArrayList<Point> points) throws RectangleException {
-        if (pointsFormAValidRectangle(points)) {
-            points.sort(Point::compareTo);
-            this.bottomLeftPoint = points.get(0);
-            this.topRightPoint = points.get(3);
-            this.topLeftPoint = new Point(getLowerX(), getUpperY());
-            this.bottomRightPoint = new Point(getUpperX(), getLowerY());
+        validateInputPoints(points);
+        this.setPoints(points);
+        this.setEdges();
 
-            this.topEdge = new Edge(topLeftPoint, topRightPoint);
-            this.rightEdge = new Edge(bottomRightPoint, topRightPoint);
-            this.bottomEdge = new Edge(bottomLeftPoint, bottomRightPoint);
-            this.leftEdge = new Edge(bottomLeftPoint, topLeftPoint);
-
-
-        } else {
-            throw new RectangleException("ERROR: A rectangle only has 4 points.");
-        }
     }
 
-    private boolean pointsFormAValidRectangle(ArrayList<Point> points) throws RectangleException {
+    private void setPoints(ArrayList<Point> points) {
+        points.sort(Point::compareTo);
+        this.bottomLeftPoint = points.get(0);
+        this.topRightPoint = points.get(3);
+        this.topLeftPoint = new Point(bottomLeftPoint.getX(), topRightPoint.getY());
+        this.bottomRightPoint = new Point(topRightPoint.getX(), bottomLeftPoint.getY());
+
+    }
+
+    private void setEdges() {
+        this.topEdge = new Edge(topLeftPoint, topRightPoint);
+        this.rightEdge = new Edge(bottomRightPoint, topRightPoint);
+        this.bottomEdge = new Edge(bottomLeftPoint, bottomRightPoint);
+        this.leftEdge = new Edge(bottomLeftPoint, topLeftPoint);
+    }
+
+    private void validateInputPoints(ArrayList<Point> points) throws RectangleException {
         boolean correctNumberOfPoints = points.size() == 4;
         if (!correctNumberOfPoints) {
             throw new RectangleException("A Rectangle only has 4 points");
@@ -47,13 +51,11 @@ public class Rectangle {
         if (!correctNumberOfUniquePoints) {
             throw new RectangleException("A Rectangle cannot have duplicate points");
         }
-
-        return true;
     }
 
     public boolean contains(Point point) {
-        boolean containsPointInXDirection = point.getX() > getLowerX() && point.getX() < getUpperX();
-        boolean containsPointInYDirection = point.getY() > getLowerY() && point.getY() < getUpperY();
+        boolean containsPointInXDirection = point.getX() > getLowerXBound() && point.getX() < getUpperXBound();
+        boolean containsPointInYDirection = point.getY() > getLowerYBound() && point.getY() < getUpperYBound();
 
         return containsPointInXDirection && containsPointInYDirection;
     }
@@ -78,27 +80,33 @@ public class Rectangle {
         return edges;
     }
 
-    private int getLowerX() {
+    private int getLowerXBound() {
         return this.bottomLeftPoint.getX();
     }
 
-    private int getLowerY() {
+    private int getLowerYBound() {
         return this.bottomLeftPoint.getY();
     }
 
-    private int getUpperX() {
+    private int getUpperXBound() {
         return this.topRightPoint.getX();
     }
 
-    private int getUpperY() {
+    private int getUpperYBound() {
         return this.topRightPoint.getY();
     }
 
     @Override
     public String toString() {
         return "Rectangle{" +
-                ", bottomLeftPoint=" + bottomLeftPoint +
+                "bottomLeftPoint=" + bottomLeftPoint +
                 ", topRightPoint=" + topRightPoint +
+                ", topLeftPoint=" + topLeftPoint +
+                ", bottomRightPoint=" + bottomRightPoint +
+                ", topEdge=" + topEdge +
+                ", rightEdge=" + rightEdge +
+                ", bottomEdge=" + bottomEdge +
+                ", leftEdge=" + leftEdge +
                 '}';
     }
 
