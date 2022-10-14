@@ -4,7 +4,8 @@ import org.example.cartesian.Edge;
 import org.example.cartesian.Point;
 
 import java.util.ArrayList;
-import java.util.Collections;
+import java.util.Objects;
+import java.util.concurrent.atomic.AtomicInteger;
 
 public class RectangleAnalyzer {
 
@@ -21,10 +22,21 @@ public class RectangleAnalyzer {
             });
         });
 
-        intersections.removeAll(Collections.singleton(null));
-
+        intersections.removeIf(Objects::isNull);
 
         return intersections;
+    }
+
+    public static boolean doesRectangleContainOtherRectangle(Rectangle primaryRectangle, Rectangle otherRectangle) {
+        AtomicInteger cornersContainedByPrimaryRectangle = new AtomicInteger();
+
+        otherRectangle.getCorners().forEach((currentCorner) -> {
+            if (primaryRectangle.contains(currentCorner)) {
+                cornersContainedByPrimaryRectangle.getAndIncrement();
+            }
+        });
+
+        return cornersContainedByPrimaryRectangle.get() == 4;
     }
 
 
