@@ -307,6 +307,8 @@ class RectangleAnalyzerTest {
 
         System.out.println(intersectionPoints);
         ArrayList<AdjacencyType> rectangleAdjacencies = RectangleAnalyzer.getRectangleAdjacencies(primaryRectangle, otherRectangle);
+        System.out.println(rectangleAdjacencies);
+
 
         assertTrue(rectangleAdjacencies.contains(AdjacencyType.PROPER));
 

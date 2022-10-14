@@ -15,7 +15,7 @@ public class Edge {
 
     public Point intersects(Edge otherEdge) {
         if (this.start.getX() == this.end.getX()) {
-            if (this.start.getX() > otherEdge.getStart().getX() && this.end.getX() < otherEdge.getEnd().getX() ) {
+            if (this.start.getX() > otherEdge.getStart().getX() && this.end.getX() < otherEdge.getEnd().getX()) {
                 if (this.start.getY() < otherEdge.getStart().getY() && this.end.getY() > otherEdge.getStart().getY()) {
                     return new Point(this.start.getX(), otherEdge.getStart().getY());
                 }
@@ -23,7 +23,7 @@ public class Edge {
         }
 
         if (this.start.getY() == this.end.getY()) {
-            if (this.start.getY() > otherEdge.getStart().getY() && this.end.getY() < otherEdge.getEnd().getY() ) {
+            if (this.start.getY() > otherEdge.getStart().getY() && this.end.getY() < otherEdge.getEnd().getY()) {
                 if (this.start.getX() < otherEdge.getStart().getX() && this.end.getX() > otherEdge.getStart().getX()) {
                     return new Point(otherEdge.getStart().getX(), this.start.getY());
                 }
@@ -37,6 +37,23 @@ public class Edge {
         if (this.equals(otherEdge)) {
             return AdjacencyType.PROPER;
         }
+
+        if (this.start.getX() == this.end.getX()) {
+            if (otherEdge.getStart().getX() == otherEdge.getEnd().getX()) {
+                if (this.start.getY() > otherEdge.getStart().getY() && this.end.getY() < otherEdge.getEnd().getY()) {
+                    return AdjacencyType.SUB_LINE;
+                }
+            }
+        }
+
+        if (this.start.getY() == this.end.getY()) {
+            if (otherEdge.getStart().getY() == otherEdge.getEnd().getY()) {
+                if (this.start.getX() > otherEdge.getStart().getX() && this.end.getX() < otherEdge.getEnd().getX()) {
+                    return AdjacencyType.SUB_LINE;
+                }
+            }
+        }
+
 
         return AdjacencyType.NONE;
     }
