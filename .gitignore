@@ -41,3 +41,4 @@ build/
 
 ### START - Manually Added Ignore Paths ###
 workspace.xml
+.idea/codeStyles/
