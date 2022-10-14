@@ -39,7 +39,7 @@ public class RectangleAnalyzer {
         return cornersContainedByPrimaryRectangle.get() == 4;
     }
 
-    public static ArrayList<AdjacencyType> getRectangleAdjacency(Rectangle primaryRectangle, Rectangle otherRectangle) {
+    public static ArrayList<AdjacencyType> getRectangleAdjacencies(Rectangle primaryRectangle, Rectangle otherRectangle) {
         ArrayList<Edge> primaryRectangleEdges = primaryRectangle.getEdges();
         ArrayList<Edge> otherRectangleEdges = otherRectangle.getEdges();
 

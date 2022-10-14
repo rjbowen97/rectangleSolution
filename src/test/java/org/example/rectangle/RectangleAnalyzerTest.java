@@ -287,10 +287,10 @@ class RectangleAnalyzerTest {
     @Test
     void adjacentRectanglesRightSubLine() throws Rectangle.RectangleException {
         ArrayList<Corner> otherRectangleCorners = new ArrayList<>();
-        otherRectangleCorners.add(new Corner(10, -5));
-        otherRectangleCorners.add(new Corner(15, -5));
-        otherRectangleCorners.add(new Corner(10, 5));
-        otherRectangleCorners.add(new Corner(15, 5));
+        otherRectangleCorners.add(new Corner(10, 10));
+        otherRectangleCorners.add(new Corner(15, -10));
+        otherRectangleCorners.add(new Corner(10, -10));
+        otherRectangleCorners.add(new Corner(15, 10));
 
         Rectangle otherRectangle = new Rectangle(otherRectangleCorners);
 
@@ -304,6 +304,12 @@ class RectangleAnalyzerTest {
 
         assertFalse(RectangleAnalyzer.doesRectangleContainOtherRectangle(primaryRectangle, otherRectangle));
         assertFalse(RectangleAnalyzer.doesRectangleContainOtherRectangle(otherRectangle, primaryRectangle));
+
+        System.out.println(intersectionPoints);
+        ArrayList<AdjacencyType> rectangleAdjacencies = RectangleAnalyzer.getRectangleAdjacencies(primaryRectangle, otherRectangle);
+
+        assertTrue(rectangleAdjacencies.contains(AdjacencyType.PROPER));
+
     }
 
 

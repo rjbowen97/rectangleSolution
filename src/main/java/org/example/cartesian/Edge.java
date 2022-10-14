@@ -2,6 +2,8 @@ package org.example.cartesian;
 
 import org.example.rectangle.AdjacencyType;
 
+import java.util.Objects;
+
 public class Edge {
     Point start;
     Point end;
@@ -32,10 +34,29 @@ public class Edge {
     }
 
     public AdjacencyType isAdjacentTo(Edge otherEdge) {
+        if (this.equals(otherEdge)) {
+            return AdjacencyType.PROPER;
+        }
+
         return AdjacencyType.NONE;
     }
 
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) {
+            return true;
+        }
+        if (o == null || getClass() != o.getClass()) {
+            return false;
+        }
+        Edge edge = (Edge) o;
+        return start.equals(edge.start) && end.equals(edge.end);
+    }
 
+    @Override
+    public int hashCode() {
+        return Objects.hash(start, end);
+    }
 
     public Point getStart() {
         return start;
