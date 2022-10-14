@@ -12,6 +12,7 @@ public class Rectangle {
     private final Corner topLeftCorner;
     private final Corner bottomRightCorner;
 
+
     private final Edge topEdge;
     private final Edge rightEdge;
     private final Edge bottomEdge;
@@ -56,6 +57,16 @@ public class Rectangle {
         boolean containsPointInYDirection = point.getY() > getLowerY() && point.getY() < getUpperY();
 
         return containsPointInXDirection && containsPointInYDirection;
+    }
+
+    public ArrayList<Edge> getEdges() {
+        ArrayList<Edge> edges = new ArrayList<>();
+        edges.add(topEdge);
+        edges.add(rightEdge);
+        edges.add(bottomEdge);
+        edges.add(leftEdge);
+
+        return edges;
     }
 
     private int getLowerX() {
