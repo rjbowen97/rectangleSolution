@@ -59,6 +59,16 @@ public class Rectangle {
         return containsPointInXDirection && containsPointInYDirection;
     }
 
+    public ArrayList<Corner> getCorners() {
+        ArrayList<Corner> corners = new ArrayList<>();
+        corners.add(bottomLeftCorner);
+        corners.add(topRightCorner);
+        corners.add(topLeftCorner);
+        corners.add(bottomRightCorner);
+
+        return corners;
+    }
+
     public ArrayList<Edge> getEdges() {
         ArrayList<Edge> edges = new ArrayList<>();
         edges.add(topEdge);
