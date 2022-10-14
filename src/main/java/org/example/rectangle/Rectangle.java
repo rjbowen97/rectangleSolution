@@ -12,7 +12,6 @@ public class Rectangle {
     private final Corner topLeftCorner;
     private final Corner bottomRightCorner;
 
-
     private final Edge topEdge;
     private final Edge rightEdge;
     private final Edge bottomEdge;
