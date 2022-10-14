@@ -309,6 +309,8 @@ class RectangleAnalyzerTest {
         HashSet<AdjacencyType> invertedRectangleAdjacencies = RectangleAnalyzer.getRectangleAdjacencies(otherRectangle, primaryRectangle);
         System.out.println(rectangleAdjacencies);
 
+        assertEquals(1, rectangleAdjacencies.size());
+        assertEquals(1, invertedRectangleAdjacencies.size());
 
         assertTrue(rectangleAdjacencies.contains(AdjacencyType.SUB_LINE));
         assertTrue(invertedRectangleAdjacencies.contains(AdjacencyType.SUB_LINE));
@@ -338,6 +340,8 @@ class RectangleAnalyzerTest {
         HashSet<AdjacencyType> invertedRectangleAdjacencies = RectangleAnalyzer.getRectangleAdjacencies(otherRectangle, primaryRectangle);
         System.out.println(rectangleAdjacencies);
 
+        assertEquals(1, rectangleAdjacencies.size());
+        assertEquals(1, invertedRectangleAdjacencies.size());
 
         assertTrue(rectangleAdjacencies.contains(AdjacencyType.SUB_LINE));
         assertTrue(invertedRectangleAdjacencies.contains(AdjacencyType.SUB_LINE));
@@ -367,6 +371,8 @@ class RectangleAnalyzerTest {
         HashSet<AdjacencyType> invertedRectangleAdjacencies = RectangleAnalyzer.getRectangleAdjacencies(otherRectangle, primaryRectangle);
         System.out.println(rectangleAdjacencies);
 
+        assertEquals(1, rectangleAdjacencies.size());
+        assertEquals(1, invertedRectangleAdjacencies.size());
 
         assertTrue(rectangleAdjacencies.contains(AdjacencyType.SUB_LINE));
         assertTrue(invertedRectangleAdjacencies.contains(AdjacencyType.SUB_LINE));
@@ -396,6 +402,8 @@ class RectangleAnalyzerTest {
         HashSet<AdjacencyType> invertedRectangleAdjacencies = RectangleAnalyzer.getRectangleAdjacencies(otherRectangle, primaryRectangle);
         System.out.println(rectangleAdjacencies);
 
+        assertEquals(1, rectangleAdjacencies.size());
+        assertEquals(1, invertedRectangleAdjacencies.size());
 
         assertTrue(rectangleAdjacencies.contains(AdjacencyType.SUB_LINE));
         assertTrue(invertedRectangleAdjacencies.contains(AdjacencyType.SUB_LINE));
