@@ -36,7 +36,9 @@ class RectangleAnalyzerTest {
         ArrayList<Point> intersectionPoints = RectangleAnalyzer.doRectanglesIntersect(primaryRectangle, otherRectangle);
         System.out.println(intersectionPoints);
 
-        assertEquals(intersectionPoints.size(), 2);
+        assertEquals(2, intersectionPoints.size());
+        assertEquals(new Point(0, 0), intersectionPoints.get(0));
+        assertEquals(new Point(0, 0), intersectionPoints.get(1));
 
     }
 
@@ -53,7 +55,9 @@ class RectangleAnalyzerTest {
         ArrayList<Point> intersectionPoints = RectangleAnalyzer.doRectanglesIntersect(primaryRectangle, otherRectangle);
         System.out.println(intersectionPoints);
 
-        assertEquals(intersectionPoints.size(), 2);
+        assertEquals(2, intersectionPoints.size());
+        assertEquals(new Point(0, 0), intersectionPoints.get(0));
+        assertEquals(new Point(0, 0), intersectionPoints.get(1));
     }
 
     @Test
@@ -69,7 +73,9 @@ class RectangleAnalyzerTest {
         ArrayList<Point> intersectionPoints = RectangleAnalyzer.doRectanglesIntersect(primaryRectangle, otherRectangle);
         System.out.println(intersectionPoints);
 
-        assertEquals(intersectionPoints.size(), 2);
+        assertEquals(2, intersectionPoints.size());
+        assertEquals(new Point(0, 0), intersectionPoints.get(0));
+        assertEquals(new Point(0, 0), intersectionPoints.get(1));
     }
 
     @Test
@@ -85,7 +91,9 @@ class RectangleAnalyzerTest {
         ArrayList<Point> intersectionPoints = RectangleAnalyzer.doRectanglesIntersect(primaryRectangle, otherRectangle);
         System.out.println(intersectionPoints);
 
-        assertEquals(intersectionPoints.size(), 2);
+        assertEquals(2, intersectionPoints.size());
+        assertEquals(new Point(0, 0), intersectionPoints.get(0));
+        assertEquals(new Point(0, 0), intersectionPoints.get(1));
     }
 
     @Test
@@ -101,7 +109,9 @@ class RectangleAnalyzerTest {
         ArrayList<Point> intersectionPoints = RectangleAnalyzer.doRectanglesIntersect(primaryRectangle, otherRectangle);
         System.out.println(intersectionPoints);
 
-        assertEquals(intersectionPoints.size(), 2);
+        assertEquals(2, intersectionPoints.size());
+        assertEquals(new Point(0, 0), intersectionPoints.get(0));
+        assertEquals(new Point(0, 0), intersectionPoints.get(1));
     }
 
     @Test
@@ -117,7 +127,9 @@ class RectangleAnalyzerTest {
         ArrayList<Point> intersectionPoints = RectangleAnalyzer.doRectanglesIntersect(primaryRectangle, otherRectangle);
         System.out.println(intersectionPoints);
 
-        assertEquals(intersectionPoints.size(), 2);
+        assertEquals(2, intersectionPoints.size());
+        assertEquals(new Point(0, 0), intersectionPoints.get(0));
+        assertEquals(new Point(0, 0), intersectionPoints.get(1));
     }
 
     @Test
@@ -133,7 +145,9 @@ class RectangleAnalyzerTest {
         ArrayList<Point> intersectionPoints = RectangleAnalyzer.doRectanglesIntersect(primaryRectangle, otherRectangle);
         System.out.println(intersectionPoints);
 
-        assertEquals(intersectionPoints.size(), 2);
+        assertEquals(2, intersectionPoints.size());
+        assertEquals(new Point(0, 0), intersectionPoints.get(0));
+        assertEquals(new Point(0, 0), intersectionPoints.get(1));
     }
 
     @Test
@@ -149,7 +163,9 @@ class RectangleAnalyzerTest {
         ArrayList<Point> intersectionPoints = RectangleAnalyzer.doRectanglesIntersect(primaryRectangle, otherRectangle);
         System.out.println(intersectionPoints);
 
-        assertEquals(intersectionPoints.size(), 2);
+        assertEquals(2, intersectionPoints.size());
+        assertEquals(new Point(0, 0), intersectionPoints.get(0));
+        assertEquals(new Point(0, 0), intersectionPoints.get(1));
     }
 
     @Test
@@ -165,5 +181,6 @@ class RectangleAnalyzerTest {
         ArrayList<Point> intersectionPoints = RectangleAnalyzer.doRectanglesIntersect(primaryRectangle, otherRectangle);
         System.out.println(intersectionPoints);
 
-        assertEquals(intersectionPoints.size(), 0);    }
+        assertEquals(intersectionPoints.size(), 0);
+    }
 }
