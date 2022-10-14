@@ -40,20 +40,56 @@ public class Edge {
 
         if (this.start.getX() == this.end.getX()) {
             if (otherEdge.getStart().getX() == otherEdge.getEnd().getX()) {
-                if (this.start.getY() > otherEdge.getStart().getY() && this.end.getY() < otherEdge.getEnd().getY()) {
-                    return AdjacencyType.SUB_LINE;
+                if (this.start.getX() == otherEdge.getStart().getX()) {
+                    if (this.start.getY() > otherEdge.getStart().getY() && this.end.getY() < otherEdge.getEnd().getY()) {
+                        return AdjacencyType.SUB_LINE;
+                    }
+
                 }
             }
         }
 
         if (this.start.getY() == this.end.getY()) {
             if (otherEdge.getStart().getY() == otherEdge.getEnd().getY()) {
-                if (this.start.getX() > otherEdge.getStart().getX() && this.end.getX() < otherEdge.getEnd().getX()) {
-                    return AdjacencyType.SUB_LINE;
+                if (this.start.getY() == otherEdge.getStart().getY()) {
+                    if (this.start.getX() > otherEdge.getStart().getX() && this.end.getX() < otherEdge.getEnd().getX()) {
+                        return AdjacencyType.SUB_LINE;
+                    }
+
                 }
             }
         }
 
+        if (this.start.getX() == this.end.getX()) {
+            if (otherEdge.getStart().getX() == otherEdge.getEnd().getX()) {
+                if (this.start.getX() == otherEdge.getStart().getX()) {
+                    if (this.start.getY() > otherEdge.getStart().getY() && this.end.getY() > otherEdge.getEnd().getY()) {
+                        return AdjacencyType.PARTIAL;
+                    }
+                    if (this.start.getY() < otherEdge.getStart().getY() && this.end.getY() < otherEdge.getEnd().getY()) {
+                        return AdjacencyType.PARTIAL;
+                    }
+
+                }
+            }
+        }
+
+        if (this.start.getY() == this.end.getY()) {
+            if (otherEdge.getStart().getY() == otherEdge.getEnd().getY()) {
+                if (this.start.getY() == otherEdge.getStart().getY()) {
+                    if (this.start.getX() > otherEdge.getStart().getX() && this.end.getX() > otherEdge.getEnd().getX()) {
+                        if (this.start.getX() < otherEdge.getEnd().getX()) {
+                            return AdjacencyType.PARTIAL;
+                        }
+                    }
+                    if (this.start.getX() < otherEdge.getStart().getX() && this.end.getX() < otherEdge.getEnd().getX()) {
+                        if (this.end.getX() > otherEdge.getStart().getX()) {
+                            return AdjacencyType.PARTIAL;
+                        }
+                    }
+                }
+            }
+        }
 
         return AdjacencyType.NONE;
     }
