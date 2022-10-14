@@ -42,13 +42,32 @@ class RectangleTest {
     }
 
     @Test
-    void newRectangleHasCorrectlyOrderedCorners() throws Rectangle.RectangleException {
+    void newRectangleHasCorrectlyOrderedCornersAndEdges() throws Rectangle.RectangleException {
         Rectangle rectangle = new Rectangle(validRectangleCorners);
 
         assertEquals(rectangle.getBottomLeftCorner().getX(), 1);
         assertEquals(rectangle.getBottomLeftCorner().getY(), -3);
+
+        assertEquals(rectangle.getTopLeftCorner().getX(), 1);
+        assertEquals(rectangle.getTopLeftCorner().getY(), 2);
+
         assertEquals(rectangle.getTopRightCorner().getX(), 4);
         assertEquals(rectangle.getTopRightCorner().getY(), 2);
+
+        assertEquals(rectangle.getBottomRightCorner().getX(), 4);
+        assertEquals(rectangle.getBottomRightCorner().getY(), -3);
+
+        assertEquals(rectangle.getTopEdge().getStart(), rectangle.getTopLeftCorner());
+        assertEquals(rectangle.getTopEdge().getEnd(), rectangle.getTopRightCorner());
+
+        assertEquals(rectangle.getRightEdge().getStart(), rectangle.getBottomRightCorner());
+        assertEquals(rectangle.getRightEdge().getEnd(), rectangle.getTopRightCorner());
+
+        assertEquals(rectangle.getBottomEdge().getStart(), rectangle.getBottomLeftCorner());
+        assertEquals(rectangle.getBottomEdge().getEnd(), rectangle.getBottomRightCorner());
+
+        assertEquals(rectangle.getLeftEdge().getStart(), rectangle.getBottomLeftCorner());
+        assertEquals(rectangle.getLeftEdge().getEnd(), rectangle.getTopLeftCorner());
 
     }
 
