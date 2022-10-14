@@ -153,7 +153,7 @@ public class Edge {
     }
 
     /**
-     * Used for checking if a point is unique in a HashSet.
+     * Used for checking if an edge is unique in a HashSet.
      * @return The hashcode generated from the start and end points.
      */
     @Override
