@@ -7,45 +7,45 @@ import java.util.ArrayList;
 import java.util.HashSet;
 
 public class Rectangle {
-    private final Corner bottomLeftCorner;
-    private final Corner topRightCorner;
-    private final Corner topLeftCorner;
-    private final Corner bottomRightCorner;
+    private final Point bottomLeftPoint;
+    private final Point topRightPoint;
+    private final Point topLeftPoint;
+    private final Point bottomRightPoint;
 
     private final Edge topEdge;
     private final Edge rightEdge;
     private final Edge bottomEdge;
     private final Edge leftEdge;
 
-    public Rectangle(ArrayList<Corner> corners) throws RectangleException {
-        if (cornersFormAValidRectangle(corners)) {
-            corners.sort(Corner::compareTo);
-            this.bottomLeftCorner = corners.get(0);
-            this.topRightCorner = corners.get(3);
-            this.topLeftCorner = new Corner(getLowerX(), getUpperY());
-            this.bottomRightCorner = new Corner(getUpperX(), getLowerY());
+    public Rectangle(ArrayList<Point> points) throws RectangleException {
+        if (pointsFormAValidRectangle(points)) {
+            points.sort(Point::compareTo);
+            this.bottomLeftPoint = points.get(0);
+            this.topRightPoint = points.get(3);
+            this.topLeftPoint = new Point(getLowerX(), getUpperY());
+            this.bottomRightPoint = new Point(getUpperX(), getLowerY());
 
-            this.topEdge = new Edge(topLeftCorner, topRightCorner);
-            this.rightEdge = new Edge(bottomRightCorner, topRightCorner);
-            this.bottomEdge = new Edge(bottomLeftCorner, bottomRightCorner);
-            this.leftEdge = new Edge(bottomLeftCorner, topLeftCorner);
+            this.topEdge = new Edge(topLeftPoint, topRightPoint);
+            this.rightEdge = new Edge(bottomRightPoint, topRightPoint);
+            this.bottomEdge = new Edge(bottomLeftPoint, bottomRightPoint);
+            this.leftEdge = new Edge(bottomLeftPoint, topLeftPoint);
 
 
         } else {
-            throw new RectangleException("ERROR: A rectangle only has 4 corners.");
+            throw new RectangleException("ERROR: A rectangle only has 4 points.");
         }
     }
 
-    private boolean cornersFormAValidRectangle(ArrayList<Corner> corners) throws RectangleException {
-        boolean correctNumberOfCorners = corners.size() == 4;
-        if (!correctNumberOfCorners) {
-            throw new RectangleException("A Rectangle only has 4 corners");
+    private boolean pointsFormAValidRectangle(ArrayList<Point> points) throws RectangleException {
+        boolean correctNumberOfPoints = points.size() == 4;
+        if (!correctNumberOfPoints) {
+            throw new RectangleException("A Rectangle only has 4 points");
         }
 
-        HashSet<Corner> uniqueCorners = new HashSet<>(corners);
-        boolean correctNumberOfUniqueCorners = uniqueCorners.size() == 4;
-        if (!correctNumberOfUniqueCorners) {
-            throw new RectangleException("A Rectangle cannot have duplicate corners");
+        HashSet<Point> uniquePoints = new HashSet<>(points);
+        boolean correctNumberOfUniquePoints = uniquePoints.size() == 4;
+        if (!correctNumberOfUniquePoints) {
+            throw new RectangleException("A Rectangle cannot have duplicate points");
         }
 
         return true;
@@ -58,14 +58,14 @@ public class Rectangle {
         return containsPointInXDirection && containsPointInYDirection;
     }
 
-    public ArrayList<Corner> getCorners() {
-        ArrayList<Corner> corners = new ArrayList<>();
-        corners.add(bottomLeftCorner);
-        corners.add(topRightCorner);
-        corners.add(topLeftCorner);
-        corners.add(bottomRightCorner);
+    public ArrayList<Point> getPoints() {
+        ArrayList<Point> points = new ArrayList<>();
+        points.add(bottomLeftPoint);
+        points.add(topRightPoint);
+        points.add(topLeftPoint);
+        points.add(bottomRightPoint);
 
-        return corners;
+        return points;
     }
 
     public ArrayList<Edge> getEdges() {
@@ -79,44 +79,44 @@ public class Rectangle {
     }
 
     private int getLowerX() {
-        return this.bottomLeftCorner.getX();
+        return this.bottomLeftPoint.getX();
     }
 
     private int getLowerY() {
-        return this.bottomLeftCorner.getY();
+        return this.bottomLeftPoint.getY();
     }
 
     private int getUpperX() {
-        return this.topRightCorner.getX();
+        return this.topRightPoint.getX();
     }
 
     private int getUpperY() {
-        return this.topRightCorner.getY();
+        return this.topRightPoint.getY();
     }
 
     @Override
     public String toString() {
         return "Rectangle{" +
-                ", bottomLeftCorner=" + bottomLeftCorner +
-                ", topRightCorner=" + topRightCorner +
+                ", bottomLeftPoint=" + bottomLeftPoint +
+                ", topRightPoint=" + topRightPoint +
                 '}';
     }
 
-    public Corner getBottomLeftCorner() {
-        return bottomLeftCorner;
+    public Point getBottomLeftPoint() {
+        return bottomLeftPoint;
     }
 
 
-    public Corner getTopRightCorner() {
-        return topRightCorner;
+    public Point getTopRightPoint() {
+        return topRightPoint;
     }
 
-    public Corner getTopLeftCorner() {
-        return topLeftCorner;
+    public Point getTopLeftPoint() {
+        return topLeftPoint;
     }
 
-    public Corner getBottomRightCorner() {
-        return bottomRightCorner;
+    public Point getBottomRightPoint() {
+        return bottomRightPoint;
     }
 
     public Edge getTopEdge() {

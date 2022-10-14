@@ -29,15 +29,15 @@ public class RectangleAnalyzer {
     }
 
     public static boolean doesRectangleContainOtherRectangle(Rectangle primaryRectangle, Rectangle otherRectangle) {
-        AtomicInteger cornersContainedByPrimaryRectangle = new AtomicInteger();
+        AtomicInteger pointsContainedByPrimaryRectangle = new AtomicInteger();
 
-        otherRectangle.getCorners().forEach((currentCorner) -> {
-            if (primaryRectangle.contains(currentCorner)) {
-                cornersContainedByPrimaryRectangle.getAndIncrement();
+        otherRectangle.getPoints().forEach((currentPoint) -> {
+            if (primaryRectangle.contains(currentPoint)) {
+                pointsContainedByPrimaryRectangle.getAndIncrement();
             }
         });
 
-        return cornersContainedByPrimaryRectangle.get() == 4;
+        return pointsContainedByPrimaryRectangle.get() == 4;
     }
 
     public static HashSet<AdjacencyType> getRectangleAdjacencies(Rectangle primaryRectangle, Rectangle otherRectangle) {

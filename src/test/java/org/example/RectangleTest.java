@@ -1,6 +1,6 @@
 package org.example;
 
-import org.example.rectangle.Corner;
+import org.example.cartesian.Point;
 import org.example.rectangle.Rectangle;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
@@ -12,29 +12,29 @@ import static org.junit.jupiter.api.Assertions.assertThrows;
 
 class RectangleTest {
 
-    ArrayList<Corner> validRectangleCorners;
-    ArrayList<Corner> tooFewCorners;
-    ArrayList<Corner> tooManyCorners;
+    ArrayList<Point> validRectanglePoints;
+    ArrayList<Point> tooFewPoints;
+    ArrayList<Point> tooManyPoints;
 
     @BeforeEach
     void setUp() {
         System.out.println("START - Test Setup");
-        validRectangleCorners = new ArrayList<>();
-        validRectangleCorners.add(new Corner(1, 2));
-        validRectangleCorners.add(new Corner(4, -3));
-        validRectangleCorners.add(new Corner(4, 2));
-        validRectangleCorners.add(new Corner(1, -3));
+        validRectanglePoints = new ArrayList<>();
+        validRectanglePoints.add(new Point(1, 2));
+        validRectanglePoints.add(new Point(4, -3));
+        validRectanglePoints.add(new Point(4, 2));
+        validRectanglePoints.add(new Point(1, -3));
 
-        tooFewCorners = new ArrayList<>(validRectangleCorners);
-        tooFewCorners.remove(0);
+        tooFewPoints = new ArrayList<>(validRectanglePoints);
+        tooFewPoints.remove(0);
 
-        tooManyCorners = new ArrayList<>(validRectangleCorners);
-        tooManyCorners.add(new Corner(1, -3));
+        tooManyPoints = new ArrayList<>(validRectanglePoints);
+        tooManyPoints.add(new Point(1, -3));
 
 
-        System.out.println(validRectangleCorners);
-        System.out.println(tooManyCorners);
-        System.out.println(tooFewCorners);
+        System.out.println(validRectanglePoints);
+        System.out.println(tooManyPoints);
+        System.out.println(tooFewPoints);
 
         System.out.println("END - Test Setup");
 
@@ -42,60 +42,60 @@ class RectangleTest {
     }
 
     @Test
-    void newRectangleHasCorrectlyOrderedCornersAndEdges() throws Rectangle.RectangleException {
-        Rectangle rectangle = new Rectangle(validRectangleCorners);
+    void newRectangleHasCorrectlyOrderedPointsAndEdges() throws Rectangle.RectangleException {
+        Rectangle rectangle = new Rectangle(validRectanglePoints);
 
-        assertEquals(rectangle.getBottomLeftCorner().getX(), 1);
-        assertEquals(rectangle.getBottomLeftCorner().getY(), -3);
+        assertEquals(rectangle.getBottomLeftPoint().getX(), 1);
+        assertEquals(rectangle.getBottomLeftPoint().getY(), -3);
 
-        assertEquals(rectangle.getTopLeftCorner().getX(), 1);
-        assertEquals(rectangle.getTopLeftCorner().getY(), 2);
+        assertEquals(rectangle.getTopLeftPoint().getX(), 1);
+        assertEquals(rectangle.getTopLeftPoint().getY(), 2);
 
-        assertEquals(rectangle.getTopRightCorner().getX(), 4);
-        assertEquals(rectangle.getTopRightCorner().getY(), 2);
+        assertEquals(rectangle.getTopRightPoint().getX(), 4);
+        assertEquals(rectangle.getTopRightPoint().getY(), 2);
 
-        assertEquals(rectangle.getBottomRightCorner().getX(), 4);
-        assertEquals(rectangle.getBottomRightCorner().getY(), -3);
+        assertEquals(rectangle.getBottomRightPoint().getX(), 4);
+        assertEquals(rectangle.getBottomRightPoint().getY(), -3);
 
-        assertEquals(rectangle.getTopEdge().getStart(), rectangle.getTopLeftCorner());
-        assertEquals(rectangle.getTopEdge().getEnd(), rectangle.getTopRightCorner());
+        assertEquals(rectangle.getTopEdge().getStart(), rectangle.getTopLeftPoint());
+        assertEquals(rectangle.getTopEdge().getEnd(), rectangle.getTopRightPoint());
 
-        assertEquals(rectangle.getRightEdge().getStart(), rectangle.getBottomRightCorner());
-        assertEquals(rectangle.getRightEdge().getEnd(), rectangle.getTopRightCorner());
+        assertEquals(rectangle.getRightEdge().getStart(), rectangle.getBottomRightPoint());
+        assertEquals(rectangle.getRightEdge().getEnd(), rectangle.getTopRightPoint());
 
-        assertEquals(rectangle.getBottomEdge().getStart(), rectangle.getBottomLeftCorner());
-        assertEquals(rectangle.getBottomEdge().getEnd(), rectangle.getBottomRightCorner());
+        assertEquals(rectangle.getBottomEdge().getStart(), rectangle.getBottomLeftPoint());
+        assertEquals(rectangle.getBottomEdge().getEnd(), rectangle.getBottomRightPoint());
 
-        assertEquals(rectangle.getLeftEdge().getStart(), rectangle.getBottomLeftCorner());
-        assertEquals(rectangle.getLeftEdge().getEnd(), rectangle.getTopLeftCorner());
+        assertEquals(rectangle.getLeftEdge().getStart(), rectangle.getBottomLeftPoint());
+        assertEquals(rectangle.getLeftEdge().getEnd(), rectangle.getTopLeftPoint());
 
     }
 
     @Test
-    void rectangleWithDuplicateCornersThrowsException() {
-        ArrayList<Corner> duplicateCorners = new ArrayList<>();
-        duplicateCorners.add(new Corner(1, 2));
-        duplicateCorners.add(new Corner(1, 2));
-        duplicateCorners.add(new Corner(1, 2));
-        duplicateCorners.add(new Corner(1, 2));
+    void rectangleWithDuplicatePointsThrowsException() {
+        ArrayList<Point> duplicatePoints = new ArrayList<>();
+        duplicatePoints.add(new Point(1, 2));
+        duplicatePoints.add(new Point(1, 2));
+        duplicatePoints.add(new Point(1, 2));
+        duplicatePoints.add(new Point(1, 2));
 
 
         assertThrows(Rectangle.RectangleException.class, () -> {
-            new Rectangle(duplicateCorners);
+            new Rectangle(duplicatePoints);
         });
     }
 
     @Test
-    void rectangleWithTooFewCornersThrowsException() {
+    void rectangleWithTooFewPointsThrowsException() {
         assertThrows(Rectangle.RectangleException.class, () -> {
-            new Rectangle(tooFewCorners);
+            new Rectangle(tooFewPoints);
         });
     }
 
     @Test
-    void rectangleWithTooManyCornersThrowsException() throws Rectangle.RectangleException {
+    void rectangleWithTooManyPointsThrowsException() throws Rectangle.RectangleException {
         assertThrows(Rectangle.RectangleException.class, () -> {
-            new Rectangle(tooManyCorners);
+            new Rectangle(tooManyPoints);
         });
     }
 }

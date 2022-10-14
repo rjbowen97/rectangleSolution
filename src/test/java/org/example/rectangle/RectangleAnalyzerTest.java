@@ -15,24 +15,24 @@ class RectangleAnalyzerTest {
 
     @BeforeEach
     void setUp() throws Rectangle.RectangleException {
-        ArrayList<Corner> primaryRectangleCorners = new ArrayList<>();
-        primaryRectangleCorners.add(new Corner(-10, -10));
-        primaryRectangleCorners.add(new Corner(-10, 10));
-        primaryRectangleCorners.add(new Corner(10, -10));
-        primaryRectangleCorners.add(new Corner(10, 10));
+        ArrayList<Point> primaryRectanglePoints = new ArrayList<>();
+        primaryRectanglePoints.add(new Point(-10, -10));
+        primaryRectanglePoints.add(new Point(-10, 10));
+        primaryRectanglePoints.add(new Point(10, -10));
+        primaryRectanglePoints.add(new Point(10, 10));
 
-        primaryRectangle = new Rectangle(primaryRectangleCorners);
+        primaryRectangle = new Rectangle(primaryRectanglePoints);
     }
 
     @Test
     void intersectingRectanglesTopRight() throws Rectangle.RectangleException {
-        ArrayList<Corner> otherRectangleCorners = new ArrayList<>();
-        otherRectangleCorners.add(new Corner(5, 5));
-        otherRectangleCorners.add(new Corner(15, 5));
-        otherRectangleCorners.add(new Corner(5, 15));
-        otherRectangleCorners.add(new Corner(15, 15));
+        ArrayList<Point> otherRectanglePoints = new ArrayList<>();
+        otherRectanglePoints.add(new Point(5, 5));
+        otherRectanglePoints.add(new Point(15, 5));
+        otherRectanglePoints.add(new Point(5, 15));
+        otherRectanglePoints.add(new Point(15, 15));
 
-        Rectangle otherRectangle = new Rectangle(otherRectangleCorners);
+        Rectangle otherRectangle = new Rectangle(otherRectanglePoints);
 
         ArrayList<Point> intersectionPoints = RectangleAnalyzer.getRectangleIntersectionPoints(primaryRectangle, otherRectangle);
         ArrayList<Point> invertedIntersectionPoints = RectangleAnalyzer.getRectangleIntersectionPoints(otherRectangle, primaryRectangle);
@@ -64,13 +64,13 @@ class RectangleAnalyzerTest {
 
     @Test
     void intersectingRectanglesRight() throws Rectangle.RectangleException {
-        ArrayList<Corner> otherRectangleCorners = new ArrayList<>();
-        otherRectangleCorners.add(new Corner(5, -5));
-        otherRectangleCorners.add(new Corner(15, -5));
-        otherRectangleCorners.add(new Corner(5, 5));
-        otherRectangleCorners.add(new Corner(15, 5));
+        ArrayList<Point> otherRectanglePoints = new ArrayList<>();
+        otherRectanglePoints.add(new Point(5, -5));
+        otherRectanglePoints.add(new Point(15, -5));
+        otherRectanglePoints.add(new Point(5, 5));
+        otherRectanglePoints.add(new Point(15, 5));
 
-        Rectangle otherRectangle = new Rectangle(otherRectangleCorners);
+        Rectangle otherRectangle = new Rectangle(otherRectanglePoints);
 
         ArrayList<Point> intersectionPoints = RectangleAnalyzer.getRectangleIntersectionPoints(primaryRectangle, otherRectangle);
         ArrayList<Point> invertedIntersectionPoints = RectangleAnalyzer.getRectangleIntersectionPoints(otherRectangle, primaryRectangle);
@@ -101,13 +101,13 @@ class RectangleAnalyzerTest {
 
     @Test
     void intersectingRectanglesBottomRight() throws Rectangle.RectangleException {
-        ArrayList<Corner> otherRectangleCorners = new ArrayList<>();
-        otherRectangleCorners.add(new Corner(5, -15));
-        otherRectangleCorners.add(new Corner(15, -15));
-        otherRectangleCorners.add(new Corner(5, -5));
-        otherRectangleCorners.add(new Corner(15, -5));
+        ArrayList<Point> otherRectanglePoints = new ArrayList<>();
+        otherRectanglePoints.add(new Point(5, -15));
+        otherRectanglePoints.add(new Point(15, -15));
+        otherRectanglePoints.add(new Point(5, -5));
+        otherRectanglePoints.add(new Point(15, -5));
 
-        Rectangle otherRectangle = new Rectangle(otherRectangleCorners);
+        Rectangle otherRectangle = new Rectangle(otherRectanglePoints);
 
         ArrayList<Point> intersectionPoints = RectangleAnalyzer.getRectangleIntersectionPoints(primaryRectangle, otherRectangle);
         ArrayList<Point> invertedIntersectionPoints = RectangleAnalyzer.getRectangleIntersectionPoints(otherRectangle, primaryRectangle);
@@ -138,13 +138,13 @@ class RectangleAnalyzerTest {
 
     @Test
     void intersectingRectanglesBottom() throws Rectangle.RectangleException {
-        ArrayList<Corner> otherRectangleCorners = new ArrayList<>();
-        otherRectangleCorners.add(new Corner(-5, -5));
-        otherRectangleCorners.add(new Corner(-5, -15));
-        otherRectangleCorners.add(new Corner(5, -5));
-        otherRectangleCorners.add(new Corner(5, -15));
+        ArrayList<Point> otherRectanglePoints = new ArrayList<>();
+        otherRectanglePoints.add(new Point(-5, -5));
+        otherRectanglePoints.add(new Point(-5, -15));
+        otherRectanglePoints.add(new Point(5, -5));
+        otherRectanglePoints.add(new Point(5, -15));
 
-        Rectangle otherRectangle = new Rectangle(otherRectangleCorners);
+        Rectangle otherRectangle = new Rectangle(otherRectanglePoints);
 
         ArrayList<Point> intersectionPoints = RectangleAnalyzer.getRectangleIntersectionPoints(primaryRectangle, otherRectangle);
         ArrayList<Point> invertedIntersectionPoints = RectangleAnalyzer.getRectangleIntersectionPoints(otherRectangle, primaryRectangle);
@@ -175,13 +175,13 @@ class RectangleAnalyzerTest {
 
     @Test
     void intersectingRectanglesBottomLeft() throws Rectangle.RectangleException {
-        ArrayList<Corner> otherRectangleCorners = new ArrayList<>();
-        otherRectangleCorners.add(new Corner(-15, -15));
-        otherRectangleCorners.add(new Corner(-15, -5));
-        otherRectangleCorners.add(new Corner(-5, -15));
-        otherRectangleCorners.add(new Corner(-5, -5));
+        ArrayList<Point> otherRectanglePoints = new ArrayList<>();
+        otherRectanglePoints.add(new Point(-15, -15));
+        otherRectanglePoints.add(new Point(-15, -5));
+        otherRectanglePoints.add(new Point(-5, -15));
+        otherRectanglePoints.add(new Point(-5, -5));
 
-        Rectangle otherRectangle = new Rectangle(otherRectangleCorners);
+        Rectangle otherRectangle = new Rectangle(otherRectanglePoints);
 
         ArrayList<Point> intersectionPoints = RectangleAnalyzer.getRectangleIntersectionPoints(primaryRectangle, otherRectangle);
         ArrayList<Point> invertedIntersectionPoints = RectangleAnalyzer.getRectangleIntersectionPoints(otherRectangle, primaryRectangle);
@@ -212,13 +212,13 @@ class RectangleAnalyzerTest {
 
     @Test
     void intersectingRectanglesLeft() throws Rectangle.RectangleException {
-        ArrayList<Corner> otherRectangleCorners = new ArrayList<>();
-        otherRectangleCorners.add(new Corner(-15, -5));
-        otherRectangleCorners.add(new Corner(-15, 5));
-        otherRectangleCorners.add(new Corner(-5, -5));
-        otherRectangleCorners.add(new Corner(-5, 5));
+        ArrayList<Point> otherRectanglePoints = new ArrayList<>();
+        otherRectanglePoints.add(new Point(-15, -5));
+        otherRectanglePoints.add(new Point(-15, 5));
+        otherRectanglePoints.add(new Point(-5, -5));
+        otherRectanglePoints.add(new Point(-5, 5));
 
-        Rectangle otherRectangle = new Rectangle(otherRectangleCorners);
+        Rectangle otherRectangle = new Rectangle(otherRectanglePoints);
 
         ArrayList<Point> intersectionPoints = RectangleAnalyzer.getRectangleIntersectionPoints(primaryRectangle, otherRectangle);
         ArrayList<Point> invertedIntersectionPoints = RectangleAnalyzer.getRectangleIntersectionPoints(otherRectangle, primaryRectangle);
@@ -249,13 +249,13 @@ class RectangleAnalyzerTest {
 
     @Test
     void intersectingRectanglesTopLeft() throws Rectangle.RectangleException {
-        ArrayList<Corner> otherRectangleCorners = new ArrayList<>();
-        otherRectangleCorners.add(new Corner(-15, 5));
-        otherRectangleCorners.add(new Corner(-15, 15));
-        otherRectangleCorners.add(new Corner(-5, 5));
-        otherRectangleCorners.add(new Corner(-5, 15));
+        ArrayList<Point> otherRectanglePoints = new ArrayList<>();
+        otherRectanglePoints.add(new Point(-15, 5));
+        otherRectanglePoints.add(new Point(-15, 15));
+        otherRectanglePoints.add(new Point(-5, 5));
+        otherRectanglePoints.add(new Point(-5, 15));
 
-        Rectangle otherRectangle = new Rectangle(otherRectangleCorners);
+        Rectangle otherRectangle = new Rectangle(otherRectanglePoints);
 
         ArrayList<Point> intersectionPoints = RectangleAnalyzer.getRectangleIntersectionPoints(primaryRectangle, otherRectangle);
         ArrayList<Point> invertedIntersectionPoints = RectangleAnalyzer.getRectangleIntersectionPoints(otherRectangle, primaryRectangle);
@@ -286,13 +286,13 @@ class RectangleAnalyzerTest {
 
     @Test
     void intersectingRectanglesTop() throws Rectangle.RectangleException {
-        ArrayList<Corner> otherRectangleCorners = new ArrayList<>();
-        otherRectangleCorners.add(new Corner(-5, 5));
-        otherRectangleCorners.add(new Corner(-5, 15));
-        otherRectangleCorners.add(new Corner(5, 5));
-        otherRectangleCorners.add(new Corner(5, 15));
+        ArrayList<Point> otherRectanglePoints = new ArrayList<>();
+        otherRectanglePoints.add(new Point(-5, 5));
+        otherRectanglePoints.add(new Point(-5, 15));
+        otherRectanglePoints.add(new Point(5, 5));
+        otherRectanglePoints.add(new Point(5, 15));
 
-        Rectangle otherRectangle = new Rectangle(otherRectangleCorners);
+        Rectangle otherRectangle = new Rectangle(otherRectanglePoints);
 
         ArrayList<Point> intersectionPoints = RectangleAnalyzer.getRectangleIntersectionPoints(primaryRectangle, otherRectangle);
         ArrayList<Point> invertedIntersectionPoints = RectangleAnalyzer.getRectangleIntersectionPoints(otherRectangle, primaryRectangle);
@@ -323,13 +323,13 @@ class RectangleAnalyzerTest {
 
     @Test
     void nonIntersectingNonContainedRectangles() throws Rectangle.RectangleException {
-        ArrayList<Corner> otherRectangleCorners = new ArrayList<>();
-        otherRectangleCorners.add(new Corner(20, 30));
-        otherRectangleCorners.add(new Corner(20, 50));
-        otherRectangleCorners.add(new Corner(40, 30));
-        otherRectangleCorners.add(new Corner(40, 50));
+        ArrayList<Point> otherRectanglePoints = new ArrayList<>();
+        otherRectanglePoints.add(new Point(20, 30));
+        otherRectanglePoints.add(new Point(20, 50));
+        otherRectanglePoints.add(new Point(40, 30));
+        otherRectanglePoints.add(new Point(40, 50));
 
-        Rectangle otherRectangle = new Rectangle(otherRectangleCorners);
+        Rectangle otherRectangle = new Rectangle(otherRectanglePoints);
 
         ArrayList<Point> intersectionPoints = RectangleAnalyzer.getRectangleIntersectionPoints(primaryRectangle, otherRectangle);
         ArrayList<Point> invertedIntersectionPoints = RectangleAnalyzer.getRectangleIntersectionPoints(otherRectangle, primaryRectangle);
@@ -346,13 +346,13 @@ class RectangleAnalyzerTest {
 
     @Test
     void containedRectangle() throws Rectangle.RectangleException {
-        ArrayList<Corner> otherRectangleCorners = new ArrayList<>();
-        otherRectangleCorners.add(new Corner(-5, 5));
-        otherRectangleCorners.add(new Corner(-5, -5));
-        otherRectangleCorners.add(new Corner(5, 5));
-        otherRectangleCorners.add(new Corner(5, -5));
+        ArrayList<Point> otherRectanglePoints = new ArrayList<>();
+        otherRectanglePoints.add(new Point(-5, 5));
+        otherRectanglePoints.add(new Point(-5, -5));
+        otherRectanglePoints.add(new Point(5, 5));
+        otherRectanglePoints.add(new Point(5, -5));
 
-        Rectangle otherRectangle = new Rectangle(otherRectangleCorners);
+        Rectangle otherRectangle = new Rectangle(otherRectanglePoints);
 
         ArrayList<Point> intersectionPoints = RectangleAnalyzer.getRectangleIntersectionPoints(primaryRectangle, otherRectangle);
         ArrayList<Point> invertedIntersectionPoints = RectangleAnalyzer.getRectangleIntersectionPoints(otherRectangle, primaryRectangle);
@@ -368,13 +368,13 @@ class RectangleAnalyzerTest {
     // SUB_LINE Adjacency Tests
     @Test
     void adjacentRectanglesRightSubLine() throws Rectangle.RectangleException {
-        ArrayList<Corner> otherRectangleCorners = new ArrayList<>();
-        otherRectangleCorners.add(new Corner(10, -5));
-        otherRectangleCorners.add(new Corner(15, -5));
-        otherRectangleCorners.add(new Corner(10, 5));
-        otherRectangleCorners.add(new Corner(15, 5));
+        ArrayList<Point> otherRectanglePoints = new ArrayList<>();
+        otherRectanglePoints.add(new Point(10, -5));
+        otherRectanglePoints.add(new Point(15, -5));
+        otherRectanglePoints.add(new Point(10, 5));
+        otherRectanglePoints.add(new Point(15, 5));
 
-        Rectangle otherRectangle = new Rectangle(otherRectangleCorners);
+        Rectangle otherRectangle = new Rectangle(otherRectanglePoints);
 
         ArrayList<Point> intersectionPoints = RectangleAnalyzer.getRectangleIntersectionPoints(primaryRectangle, otherRectangle);
         ArrayList<Point> invertedIntersectionPoints = RectangleAnalyzer.getRectangleIntersectionPoints(otherRectangle, primaryRectangle);
@@ -399,13 +399,13 @@ class RectangleAnalyzerTest {
 
     @Test
     void adjacentRectanglesBottomSubLine() throws Rectangle.RectangleException {
-        ArrayList<Corner> otherRectangleCorners = new ArrayList<>();
-        otherRectangleCorners.add(new Corner(-5, -10));
-        otherRectangleCorners.add(new Corner(-5, -15));
-        otherRectangleCorners.add(new Corner(5, -10));
-        otherRectangleCorners.add(new Corner(5, -15));
+        ArrayList<Point> otherRectanglePoints = new ArrayList<>();
+        otherRectanglePoints.add(new Point(-5, -10));
+        otherRectanglePoints.add(new Point(-5, -15));
+        otherRectanglePoints.add(new Point(5, -10));
+        otherRectanglePoints.add(new Point(5, -15));
 
-        Rectangle otherRectangle = new Rectangle(otherRectangleCorners);
+        Rectangle otherRectangle = new Rectangle(otherRectanglePoints);
 
         ArrayList<Point> intersectionPoints = RectangleAnalyzer.getRectangleIntersectionPoints(primaryRectangle, otherRectangle);
         ArrayList<Point> invertedIntersectionPoints = RectangleAnalyzer.getRectangleIntersectionPoints(otherRectangle, primaryRectangle);
@@ -430,13 +430,13 @@ class RectangleAnalyzerTest {
 
     @Test
     void adjacentRectanglesLeftSubLine() throws Rectangle.RectangleException {
-        ArrayList<Corner> otherRectangleCorners = new ArrayList<>();
-        otherRectangleCorners.add(new Corner(-10, -5));
-        otherRectangleCorners.add(new Corner(-10, 5));
-        otherRectangleCorners.add(new Corner(-15, -5));
-        otherRectangleCorners.add(new Corner(-15, 5));
+        ArrayList<Point> otherRectanglePoints = new ArrayList<>();
+        otherRectanglePoints.add(new Point(-10, -5));
+        otherRectanglePoints.add(new Point(-10, 5));
+        otherRectanglePoints.add(new Point(-15, -5));
+        otherRectanglePoints.add(new Point(-15, 5));
 
-        Rectangle otherRectangle = new Rectangle(otherRectangleCorners);
+        Rectangle otherRectangle = new Rectangle(otherRectanglePoints);
 
         ArrayList<Point> intersectionPoints = RectangleAnalyzer.getRectangleIntersectionPoints(primaryRectangle, otherRectangle);
         ArrayList<Point> invertedIntersectionPoints = RectangleAnalyzer.getRectangleIntersectionPoints(otherRectangle, primaryRectangle);
@@ -461,13 +461,13 @@ class RectangleAnalyzerTest {
 
     @Test
     void adjacentRectanglesTopSubLine() throws Rectangle.RectangleException {
-        ArrayList<Corner> otherRectangleCorners = new ArrayList<>();
-        otherRectangleCorners.add(new Corner(-5, 10));
-        otherRectangleCorners.add(new Corner(-5, 15));
-        otherRectangleCorners.add(new Corner(5, 10));
-        otherRectangleCorners.add(new Corner(5, 15));
+        ArrayList<Point> otherRectanglePoints = new ArrayList<>();
+        otherRectanglePoints.add(new Point(-5, 10));
+        otherRectanglePoints.add(new Point(-5, 15));
+        otherRectanglePoints.add(new Point(5, 10));
+        otherRectanglePoints.add(new Point(5, 15));
 
-        Rectangle otherRectangle = new Rectangle(otherRectangleCorners);
+        Rectangle otherRectangle = new Rectangle(otherRectanglePoints);
 
         ArrayList<Point> intersectionPoints = RectangleAnalyzer.getRectangleIntersectionPoints(primaryRectangle, otherRectangle);
         ArrayList<Point> invertedIntersectionPoints = RectangleAnalyzer.getRectangleIntersectionPoints(otherRectangle, primaryRectangle);
@@ -493,13 +493,13 @@ class RectangleAnalyzerTest {
     // PROPER Adjacency Tests
     @Test
     void adjacentRectanglesRightProper() throws Rectangle.RectangleException {
-        ArrayList<Corner> otherRectangleCorners = new ArrayList<>();
-        otherRectangleCorners.add(new Corner(10, -10));
-        otherRectangleCorners.add(new Corner(15, -10));
-        otherRectangleCorners.add(new Corner(10, 10));
-        otherRectangleCorners.add(new Corner(15, 10));
+        ArrayList<Point> otherRectanglePoints = new ArrayList<>();
+        otherRectanglePoints.add(new Point(10, -10));
+        otherRectanglePoints.add(new Point(15, -10));
+        otherRectanglePoints.add(new Point(10, 10));
+        otherRectanglePoints.add(new Point(15, 10));
 
-        Rectangle otherRectangle = new Rectangle(otherRectangleCorners);
+        Rectangle otherRectangle = new Rectangle(otherRectanglePoints);
 
         ArrayList<Point> intersectionPoints = RectangleAnalyzer.getRectangleIntersectionPoints(primaryRectangle, otherRectangle);
         ArrayList<Point> invertedIntersectionPoints = RectangleAnalyzer.getRectangleIntersectionPoints(otherRectangle, primaryRectangle);
@@ -524,13 +524,13 @@ class RectangleAnalyzerTest {
 
     @Test
     void adjacentRectanglesBottomProper() throws Rectangle.RectangleException {
-        ArrayList<Corner> otherRectangleCorners = new ArrayList<>();
-        otherRectangleCorners.add(new Corner(-10, -10));
-        otherRectangleCorners.add(new Corner(-10, -15));
-        otherRectangleCorners.add(new Corner(10, -10));
-        otherRectangleCorners.add(new Corner(10, -15));
+        ArrayList<Point> otherRectanglePoints = new ArrayList<>();
+        otherRectanglePoints.add(new Point(-10, -10));
+        otherRectanglePoints.add(new Point(-10, -15));
+        otherRectanglePoints.add(new Point(10, -10));
+        otherRectanglePoints.add(new Point(10, -15));
 
-        Rectangle otherRectangle = new Rectangle(otherRectangleCorners);
+        Rectangle otherRectangle = new Rectangle(otherRectanglePoints);
 
         ArrayList<Point> intersectionPoints = RectangleAnalyzer.getRectangleIntersectionPoints(primaryRectangle, otherRectangle);
         ArrayList<Point> invertedIntersectionPoints = RectangleAnalyzer.getRectangleIntersectionPoints(otherRectangle, primaryRectangle);
@@ -555,13 +555,13 @@ class RectangleAnalyzerTest {
 
     @Test
     void adjacentRectanglesLeftProper() throws Rectangle.RectangleException {
-        ArrayList<Corner> otherRectangleCorners = new ArrayList<>();
-        otherRectangleCorners.add(new Corner(-10, -10));
-        otherRectangleCorners.add(new Corner(-10, 10));
-        otherRectangleCorners.add(new Corner(-15, -10));
-        otherRectangleCorners.add(new Corner(-15, 10));
+        ArrayList<Point> otherRectanglePoints = new ArrayList<>();
+        otherRectanglePoints.add(new Point(-10, -10));
+        otherRectanglePoints.add(new Point(-10, 10));
+        otherRectanglePoints.add(new Point(-15, -10));
+        otherRectanglePoints.add(new Point(-15, 10));
 
-        Rectangle otherRectangle = new Rectangle(otherRectangleCorners);
+        Rectangle otherRectangle = new Rectangle(otherRectanglePoints);
 
         ArrayList<Point> intersectionPoints = RectangleAnalyzer.getRectangleIntersectionPoints(primaryRectangle, otherRectangle);
         ArrayList<Point> invertedIntersectionPoints = RectangleAnalyzer.getRectangleIntersectionPoints(otherRectangle, primaryRectangle);
@@ -586,13 +586,13 @@ class RectangleAnalyzerTest {
 
     @Test
     void adjacentRectanglesTopProper() throws Rectangle.RectangleException {
-        ArrayList<Corner> otherRectangleCorners = new ArrayList<>();
-        otherRectangleCorners.add(new Corner(-10, 10));
-        otherRectangleCorners.add(new Corner(-10, 15));
-        otherRectangleCorners.add(new Corner(10, 10));
-        otherRectangleCorners.add(new Corner(10, 15));
+        ArrayList<Point> otherRectanglePoints = new ArrayList<>();
+        otherRectanglePoints.add(new Point(-10, 10));
+        otherRectanglePoints.add(new Point(-10, 15));
+        otherRectanglePoints.add(new Point(10, 10));
+        otherRectanglePoints.add(new Point(10, 15));
 
-        Rectangle otherRectangle = new Rectangle(otherRectangleCorners);
+        Rectangle otherRectangle = new Rectangle(otherRectanglePoints);
 
         ArrayList<Point> intersectionPoints = RectangleAnalyzer.getRectangleIntersectionPoints(primaryRectangle, otherRectangle);
         ArrayList<Point> invertedIntersectionPoints = RectangleAnalyzer.getRectangleIntersectionPoints(otherRectangle, primaryRectangle);
@@ -619,13 +619,13 @@ class RectangleAnalyzerTest {
     // PARTIAL Adjacency Tests
     @Test
     void adjacentRectanglesRightPartial() throws Rectangle.RectangleException {
-        ArrayList<Corner> otherRectangleCorners = new ArrayList<>();
-        otherRectangleCorners.add(new Corner(10, -5));
-        otherRectangleCorners.add(new Corner(15, -5));
-        otherRectangleCorners.add(new Corner(10, 15));
-        otherRectangleCorners.add(new Corner(15, 15));
+        ArrayList<Point> otherRectanglePoints = new ArrayList<>();
+        otherRectanglePoints.add(new Point(10, -5));
+        otherRectanglePoints.add(new Point(15, -5));
+        otherRectanglePoints.add(new Point(10, 15));
+        otherRectanglePoints.add(new Point(15, 15));
 
-        Rectangle otherRectangle = new Rectangle(otherRectangleCorners);
+        Rectangle otherRectangle = new Rectangle(otherRectanglePoints);
 
         ArrayList<Point> intersectionPoints = RectangleAnalyzer.getRectangleIntersectionPoints(primaryRectangle, otherRectangle);
         ArrayList<Point> invertedIntersectionPoints = RectangleAnalyzer.getRectangleIntersectionPoints(otherRectangle, primaryRectangle);
@@ -650,13 +650,13 @@ class RectangleAnalyzerTest {
 
     @Test
     void adjacentRectanglesBottomPartial() throws Rectangle.RectangleException {
-        ArrayList<Corner> otherRectangleCorners = new ArrayList<>();
-        otherRectangleCorners.add(new Corner(-15, -10));
-        otherRectangleCorners.add(new Corner(-15, -15));
-        otherRectangleCorners.add(new Corner(5, -10));
-        otherRectangleCorners.add(new Corner(5, -15));
+        ArrayList<Point> otherRectanglePoints = new ArrayList<>();
+        otherRectanglePoints.add(new Point(-15, -10));
+        otherRectanglePoints.add(new Point(-15, -15));
+        otherRectanglePoints.add(new Point(5, -10));
+        otherRectanglePoints.add(new Point(5, -15));
 
-        Rectangle otherRectangle = new Rectangle(otherRectangleCorners);
+        Rectangle otherRectangle = new Rectangle(otherRectanglePoints);
 
         ArrayList<Point> intersectionPoints = RectangleAnalyzer.getRectangleIntersectionPoints(primaryRectangle, otherRectangle);
         ArrayList<Point> invertedIntersectionPoints = RectangleAnalyzer.getRectangleIntersectionPoints(otherRectangle, primaryRectangle);
@@ -681,13 +681,13 @@ class RectangleAnalyzerTest {
 
     @Test
     void adjacentRectanglesLeftPartial() throws Rectangle.RectangleException {
-        ArrayList<Corner> otherRectangleCorners = new ArrayList<>();
-        otherRectangleCorners.add(new Corner(-10, -15));
-        otherRectangleCorners.add(new Corner(-10, 5));
-        otherRectangleCorners.add(new Corner(-15, -15));
-        otherRectangleCorners.add(new Corner(-15, 5));
+        ArrayList<Point> otherRectanglePoints = new ArrayList<>();
+        otherRectanglePoints.add(new Point(-10, -15));
+        otherRectanglePoints.add(new Point(-10, 5));
+        otherRectanglePoints.add(new Point(-15, -15));
+        otherRectanglePoints.add(new Point(-15, 5));
 
-        Rectangle otherRectangle = new Rectangle(otherRectangleCorners);
+        Rectangle otherRectangle = new Rectangle(otherRectanglePoints);
 
         ArrayList<Point> intersectionPoints = RectangleAnalyzer.getRectangleIntersectionPoints(primaryRectangle, otherRectangle);
         ArrayList<Point> invertedIntersectionPoints = RectangleAnalyzer.getRectangleIntersectionPoints(otherRectangle, primaryRectangle);
@@ -712,13 +712,13 @@ class RectangleAnalyzerTest {
 
     @Test
     void adjacentRectanglesTopPartial() throws Rectangle.RectangleException {
-        ArrayList<Corner> otherRectangleCorners = new ArrayList<>();
-        otherRectangleCorners.add(new Corner(-5, 10));
-        otherRectangleCorners.add(new Corner(-5, 15));
-        otherRectangleCorners.add(new Corner(15, 10));
-        otherRectangleCorners.add(new Corner(15, 15));
+        ArrayList<Point> otherRectanglePoints = new ArrayList<>();
+        otherRectanglePoints.add(new Point(-5, 10));
+        otherRectanglePoints.add(new Point(-5, 15));
+        otherRectanglePoints.add(new Point(15, 10));
+        otherRectanglePoints.add(new Point(15, 15));
 
-        Rectangle otherRectangle = new Rectangle(otherRectangleCorners);
+        Rectangle otherRectangle = new Rectangle(otherRectanglePoints);
 
         ArrayList<Point> intersectionPoints = RectangleAnalyzer.getRectangleIntersectionPoints(primaryRectangle, otherRectangle);
         ArrayList<Point> invertedIntersectionPoints = RectangleAnalyzer.getRectangleIntersectionPoints(otherRectangle, primaryRectangle);
