@@ -8,7 +8,7 @@ import java.util.Collections;
 
 public class RectangleAnalyzer {
 
-    public static ArrayList<Point> doRectanglesIntersect(Rectangle primaryRectangle, Rectangle otherRectangle) {
+    public static ArrayList<Point> getRectangleIntersectionPoints(Rectangle primaryRectangle, Rectangle otherRectangle) {
 
         ArrayList<Edge> primaryRectangleEdges = primaryRectangle.getEdges();
         ArrayList<Edge> otherRectangleEdges = otherRectangle.getEdges();

@@ -34,8 +34,8 @@ class RectangleAnalyzerTest {
 
         Rectangle otherRectangle = new Rectangle(otherRectangleCorners);
 
-        ArrayList<Point> intersectionPoints = RectangleAnalyzer.doRectanglesIntersect(primaryRectangle, otherRectangle);
-        ArrayList<Point> invertedIntersectionPoints = RectangleAnalyzer.doRectanglesIntersect(otherRectangle, primaryRectangle);
+        ArrayList<Point> intersectionPoints = RectangleAnalyzer.getRectangleIntersectionPoints(primaryRectangle, otherRectangle);
+        ArrayList<Point> invertedIntersectionPoints = RectangleAnalyzer.getRectangleIntersectionPoints(otherRectangle, primaryRectangle);
         System.out.println(intersectionPoints);
         System.out.println(invertedIntersectionPoints);
 
@@ -59,8 +59,8 @@ class RectangleAnalyzerTest {
 
         Rectangle otherRectangle = new Rectangle(otherRectangleCorners);
 
-        ArrayList<Point> intersectionPoints = RectangleAnalyzer.doRectanglesIntersect(primaryRectangle, otherRectangle);
-        ArrayList<Point> invertedIntersectionPoints = RectangleAnalyzer.doRectanglesIntersect(otherRectangle, primaryRectangle);
+        ArrayList<Point> intersectionPoints = RectangleAnalyzer.getRectangleIntersectionPoints(primaryRectangle, otherRectangle);
+        ArrayList<Point> invertedIntersectionPoints = RectangleAnalyzer.getRectangleIntersectionPoints(otherRectangle, primaryRectangle);
         System.out.println(intersectionPoints);
         System.out.println(invertedIntersectionPoints);
 
@@ -83,8 +83,8 @@ class RectangleAnalyzerTest {
 
         Rectangle otherRectangle = new Rectangle(otherRectangleCorners);
 
-        ArrayList<Point> intersectionPoints = RectangleAnalyzer.doRectanglesIntersect(primaryRectangle, otherRectangle);
-        ArrayList<Point> invertedIntersectionPoints = RectangleAnalyzer.doRectanglesIntersect(otherRectangle, primaryRectangle);
+        ArrayList<Point> intersectionPoints = RectangleAnalyzer.getRectangleIntersectionPoints(primaryRectangle, otherRectangle);
+        ArrayList<Point> invertedIntersectionPoints = RectangleAnalyzer.getRectangleIntersectionPoints(otherRectangle, primaryRectangle);
         System.out.println(intersectionPoints);
         System.out.println(invertedIntersectionPoints);
 
@@ -107,8 +107,8 @@ class RectangleAnalyzerTest {
 
         Rectangle otherRectangle = new Rectangle(otherRectangleCorners);
 
-        ArrayList<Point> intersectionPoints = RectangleAnalyzer.doRectanglesIntersect(primaryRectangle, otherRectangle);
-        ArrayList<Point> invertedIntersectionPoints = RectangleAnalyzer.doRectanglesIntersect(otherRectangle, primaryRectangle);
+        ArrayList<Point> intersectionPoints = RectangleAnalyzer.getRectangleIntersectionPoints(primaryRectangle, otherRectangle);
+        ArrayList<Point> invertedIntersectionPoints = RectangleAnalyzer.getRectangleIntersectionPoints(otherRectangle, primaryRectangle);
         System.out.println(intersectionPoints);
         System.out.println(invertedIntersectionPoints);
 
@@ -131,8 +131,8 @@ class RectangleAnalyzerTest {
 
         Rectangle otherRectangle = new Rectangle(otherRectangleCorners);
 
-        ArrayList<Point> intersectionPoints = RectangleAnalyzer.doRectanglesIntersect(primaryRectangle, otherRectangle);
-        ArrayList<Point> invertedIntersectionPoints = RectangleAnalyzer.doRectanglesIntersect(otherRectangle, primaryRectangle);
+        ArrayList<Point> intersectionPoints = RectangleAnalyzer.getRectangleIntersectionPoints(primaryRectangle, otherRectangle);
+        ArrayList<Point> invertedIntersectionPoints = RectangleAnalyzer.getRectangleIntersectionPoints(otherRectangle, primaryRectangle);
         System.out.println(intersectionPoints);
         System.out.println(invertedIntersectionPoints);
 
@@ -155,8 +155,8 @@ class RectangleAnalyzerTest {
 
         Rectangle otherRectangle = new Rectangle(otherRectangleCorners);
 
-        ArrayList<Point> intersectionPoints = RectangleAnalyzer.doRectanglesIntersect(primaryRectangle, otherRectangle);
-        ArrayList<Point> invertedIntersectionPoints = RectangleAnalyzer.doRectanglesIntersect(otherRectangle, primaryRectangle);
+        ArrayList<Point> intersectionPoints = RectangleAnalyzer.getRectangleIntersectionPoints(primaryRectangle, otherRectangle);
+        ArrayList<Point> invertedIntersectionPoints = RectangleAnalyzer.getRectangleIntersectionPoints(otherRectangle, primaryRectangle);
         System.out.println(intersectionPoints);
         System.out.println(invertedIntersectionPoints);
 
@@ -179,8 +179,8 @@ class RectangleAnalyzerTest {
 
         Rectangle otherRectangle = new Rectangle(otherRectangleCorners);
 
-        ArrayList<Point> intersectionPoints = RectangleAnalyzer.doRectanglesIntersect(primaryRectangle, otherRectangle);
-        ArrayList<Point> invertedIntersectionPoints = RectangleAnalyzer.doRectanglesIntersect(otherRectangle, primaryRectangle);
+        ArrayList<Point> intersectionPoints = RectangleAnalyzer.getRectangleIntersectionPoints(primaryRectangle, otherRectangle);
+        ArrayList<Point> invertedIntersectionPoints = RectangleAnalyzer.getRectangleIntersectionPoints(otherRectangle, primaryRectangle);
         System.out.println(intersectionPoints);
         System.out.println(invertedIntersectionPoints);
 
@@ -203,8 +203,8 @@ class RectangleAnalyzerTest {
 
         Rectangle otherRectangle = new Rectangle(otherRectangleCorners);
 
-        ArrayList<Point> intersectionPoints = RectangleAnalyzer.doRectanglesIntersect(primaryRectangle, otherRectangle);
-        ArrayList<Point> invertedIntersectionPoints = RectangleAnalyzer.doRectanglesIntersect(otherRectangle, primaryRectangle);
+        ArrayList<Point> intersectionPoints = RectangleAnalyzer.getRectangleIntersectionPoints(primaryRectangle, otherRectangle);
+        ArrayList<Point> invertedIntersectionPoints = RectangleAnalyzer.getRectangleIntersectionPoints(otherRectangle, primaryRectangle);
         System.out.println(intersectionPoints);
         System.out.println(invertedIntersectionPoints);
 
@@ -227,8 +227,8 @@ class RectangleAnalyzerTest {
 
         Rectangle otherRectangle = new Rectangle(otherRectangleCorners);
 
-        ArrayList<Point> intersectionPoints = RectangleAnalyzer.doRectanglesIntersect(primaryRectangle, otherRectangle);
-        ArrayList<Point> invertedIntersectionPoints = RectangleAnalyzer.doRectanglesIntersect(otherRectangle, primaryRectangle);
+        ArrayList<Point> intersectionPoints = RectangleAnalyzer.getRectangleIntersectionPoints(primaryRectangle, otherRectangle);
+        ArrayList<Point> invertedIntersectionPoints = RectangleAnalyzer.getRectangleIntersectionPoints(otherRectangle, primaryRectangle);
         System.out.println(intersectionPoints);
         System.out.println(invertedIntersectionPoints);
 
