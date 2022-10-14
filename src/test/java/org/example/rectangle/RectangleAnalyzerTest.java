@@ -306,12 +306,13 @@ class RectangleAnalyzerTest {
         assertFalse(RectangleAnalyzer.doesRectangleContainOtherRectangle(primaryRectangle, otherRectangle));
         assertFalse(RectangleAnalyzer.doesRectangleContainOtherRectangle(otherRectangle, primaryRectangle));
 
-        System.out.println(intersectionPoints);
         ArrayList<AdjacencyType> rectangleAdjacencies = RectangleAnalyzer.getRectangleAdjacencies(primaryRectangle, otherRectangle);
+        ArrayList<AdjacencyType> invertedRectangleAdjacencies = RectangleAnalyzer.getRectangleAdjacencies(otherRectangle, primaryRectangle);
         System.out.println(rectangleAdjacencies);
 
 
         assertTrue(rectangleAdjacencies.contains(AdjacencyType.SUB_LINE));
+        assertTrue(invertedRectangleAdjacencies.contains(AdjacencyType.SUB_LINE));
 
     }
 
