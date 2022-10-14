@@ -5,6 +5,7 @@ import org.example.cartesian.Point;
 
 import java.util.ArrayList;
 import java.util.HashSet;
+import java.util.List;
 
 public class Rectangle {
     private Point bottomLeftPoint;
@@ -17,7 +18,7 @@ public class Rectangle {
     private Edge bottomEdge;
     private Edge leftEdge;
 
-    public Rectangle(ArrayList<Point> points) throws RectangleException {
+    public Rectangle(List<Point> points) throws RectangleException {
         validateInputPoints(points);
         this.setPoints(points);
         this.setEdges();
@@ -30,7 +31,7 @@ public class Rectangle {
         this.leftEdge = new Edge(bottomLeftPoint, topLeftPoint);
     }
 
-    private void validateInputPoints(ArrayList<Point> points) throws RectangleException {
+    private void validateInputPoints(List<Point> points) throws RectangleException {
         boolean correctNumberOfPoints = points.size() == 4;
         if (!correctNumberOfPoints) {
             throw new RectangleException("A Rectangle only has 4 points");
@@ -60,7 +61,7 @@ public class Rectangle {
         return points;
     }
 
-    private void setPoints(ArrayList<Point> points) {
+    private void setPoints(List<Point> points) {
         points.sort(Point::compareTo);
         this.bottomLeftPoint = points.get(0);
         this.topRightPoint = points.get(3);
