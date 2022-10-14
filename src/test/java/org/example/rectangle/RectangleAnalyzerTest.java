@@ -1,12 +1,12 @@
 package org.example.rectangle;
 
+import org.example.cartesian.Point;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
 import java.util.ArrayList;
 
-import static org.junit.jupiter.api.Assertions.assertFalse;
-import static org.junit.jupiter.api.Assertions.assertTrue;
+import static org.junit.jupiter.api.Assertions.assertEquals;
 
 class RectangleAnalyzerTest {
 
@@ -24,7 +24,7 @@ class RectangleAnalyzerTest {
     }
 
     @Test
-    void doRectanglesIntersectTopRight() throws Rectangle.RectangleException {
+    void intersectingRectanglesTopRight() throws Rectangle.RectangleException {
         ArrayList<Corner> otherRectangleCorners = new ArrayList<>();
         otherRectangleCorners.add(new Corner(5, 5));
         otherRectangleCorners.add(new Corner(15, 5));
@@ -33,15 +33,15 @@ class RectangleAnalyzerTest {
 
         Rectangle otherRectangle = new Rectangle(otherRectangleCorners);
 
-        boolean rectanglesAreIntersecting = RectangleAnalyzer.doRectanglesIntersect(primaryRectangle, otherRectangle);
-        boolean invertedRectanglesAreIntersecting = RectangleAnalyzer.doRectanglesIntersect(otherRectangle, primaryRectangle);
-        assertTrue(rectanglesAreIntersecting);
-        assertTrue(invertedRectanglesAreIntersecting);
+        ArrayList<Point> intersectionPoints = RectangleAnalyzer.doRectanglesIntersect(primaryRectangle, otherRectangle);
+        System.out.println(intersectionPoints);
+
+        assertEquals(intersectionPoints.size(), 2);
 
     }
 
     @Test
-    void doRectanglesIntersectRight() throws Rectangle.RectangleException {
+    void intersectingRectanglesRight() throws Rectangle.RectangleException {
         ArrayList<Corner> otherRectangleCorners = new ArrayList<>();
         otherRectangleCorners.add(new Corner(5, -5));
         otherRectangleCorners.add(new Corner(15, -5));
@@ -50,15 +50,14 @@ class RectangleAnalyzerTest {
 
         Rectangle otherRectangle = new Rectangle(otherRectangleCorners);
 
-        boolean rectanglesAreIntersecting = RectangleAnalyzer.doRectanglesIntersect(primaryRectangle, otherRectangle);
-        boolean invertedRectanglesAreIntersecting = RectangleAnalyzer.doRectanglesIntersect(otherRectangle, primaryRectangle);
-        assertTrue(rectanglesAreIntersecting);
-        assertTrue(invertedRectanglesAreIntersecting);
+        ArrayList<Point> intersectionPoints = RectangleAnalyzer.doRectanglesIntersect(primaryRectangle, otherRectangle);
+        System.out.println(intersectionPoints);
 
+        assertEquals(intersectionPoints.size(), 2);
     }
 
     @Test
-    void doRectanglesIntersectBottomRight() throws Rectangle.RectangleException {
+    void intersectingRectanglesBottomRight() throws Rectangle.RectangleException {
         ArrayList<Corner> otherRectangleCorners = new ArrayList<>();
         otherRectangleCorners.add(new Corner(5, -15));
         otherRectangleCorners.add(new Corner(15, -15));
@@ -67,15 +66,14 @@ class RectangleAnalyzerTest {
 
         Rectangle otherRectangle = new Rectangle(otherRectangleCorners);
 
-        boolean rectanglesAreIntersecting = RectangleAnalyzer.doRectanglesIntersect(primaryRectangle, otherRectangle);
-        boolean invertedRectanglesAreIntersecting = RectangleAnalyzer.doRectanglesIntersect(otherRectangle, primaryRectangle);
-        assertTrue(rectanglesAreIntersecting);
-        assertTrue(invertedRectanglesAreIntersecting);
+        ArrayList<Point> intersectionPoints = RectangleAnalyzer.doRectanglesIntersect(primaryRectangle, otherRectangle);
+        System.out.println(intersectionPoints);
 
+        assertEquals(intersectionPoints.size(), 2);
     }
 
     @Test
-    void doRectanglesIntersectBottom() throws Rectangle.RectangleException {
+    void intersectingRectanglesBottom() throws Rectangle.RectangleException {
         ArrayList<Corner> otherRectangleCorners = new ArrayList<>();
         otherRectangleCorners.add(new Corner(-5, -5));
         otherRectangleCorners.add(new Corner(-5, -15));
@@ -84,15 +82,14 @@ class RectangleAnalyzerTest {
 
         Rectangle otherRectangle = new Rectangle(otherRectangleCorners);
 
-        boolean rectanglesAreIntersecting = RectangleAnalyzer.doRectanglesIntersect(primaryRectangle, otherRectangle);
-        boolean invertedRectanglesAreIntersecting = RectangleAnalyzer.doRectanglesIntersect(otherRectangle, primaryRectangle);
-        assertTrue(rectanglesAreIntersecting);
-        assertTrue(invertedRectanglesAreIntersecting);
+        ArrayList<Point> intersectionPoints = RectangleAnalyzer.doRectanglesIntersect(primaryRectangle, otherRectangle);
+        System.out.println(intersectionPoints);
 
+        assertEquals(intersectionPoints.size(), 2);
     }
 
     @Test
-    void doRectanglesIntersectBottomLeft() throws Rectangle.RectangleException {
+    void intersectingRectanglesBottomLeft() throws Rectangle.RectangleException {
         ArrayList<Corner> otherRectangleCorners = new ArrayList<>();
         otherRectangleCorners.add(new Corner(-15, -15));
         otherRectangleCorners.add(new Corner(-15, -5));
@@ -101,15 +98,14 @@ class RectangleAnalyzerTest {
 
         Rectangle otherRectangle = new Rectangle(otherRectangleCorners);
 
-        boolean rectanglesAreIntersecting = RectangleAnalyzer.doRectanglesIntersect(primaryRectangle, otherRectangle);
-        boolean invertedRectanglesAreIntersecting = RectangleAnalyzer.doRectanglesIntersect(otherRectangle, primaryRectangle);
-        assertTrue(rectanglesAreIntersecting);
-        assertTrue(invertedRectanglesAreIntersecting);
+        ArrayList<Point> intersectionPoints = RectangleAnalyzer.doRectanglesIntersect(primaryRectangle, otherRectangle);
+        System.out.println(intersectionPoints);
 
+        assertEquals(intersectionPoints.size(), 2);
     }
 
     @Test
-    void doRectanglesIntersectLeft() throws Rectangle.RectangleException {
+    void intersectingRectanglesLeft() throws Rectangle.RectangleException {
         ArrayList<Corner> otherRectangleCorners = new ArrayList<>();
         otherRectangleCorners.add(new Corner(-15, -5));
         otherRectangleCorners.add(new Corner(-15, 5));
@@ -118,15 +114,14 @@ class RectangleAnalyzerTest {
 
         Rectangle otherRectangle = new Rectangle(otherRectangleCorners);
 
-        boolean rectanglesAreIntersecting = RectangleAnalyzer.doRectanglesIntersect(primaryRectangle, otherRectangle);
-        boolean invertedRectanglesAreIntersecting = RectangleAnalyzer.doRectanglesIntersect(otherRectangle, primaryRectangle);
-        assertTrue(rectanglesAreIntersecting);
-        assertTrue(invertedRectanglesAreIntersecting);
+        ArrayList<Point> intersectionPoints = RectangleAnalyzer.doRectanglesIntersect(primaryRectangle, otherRectangle);
+        System.out.println(intersectionPoints);
 
+        assertEquals(intersectionPoints.size(), 2);
     }
 
     @Test
-    void doRectanglesIntersectTopLeft() throws Rectangle.RectangleException {
+    void intersectingRectanglesTopLeft() throws Rectangle.RectangleException {
         ArrayList<Corner> otherRectangleCorners = new ArrayList<>();
         otherRectangleCorners.add(new Corner(-15, 5));
         otherRectangleCorners.add(new Corner(-15, 15));
@@ -135,15 +130,14 @@ class RectangleAnalyzerTest {
 
         Rectangle otherRectangle = new Rectangle(otherRectangleCorners);
 
-        boolean rectanglesAreIntersecting = RectangleAnalyzer.doRectanglesIntersect(primaryRectangle, otherRectangle);
-        boolean invertedRectanglesAreIntersecting = RectangleAnalyzer.doRectanglesIntersect(otherRectangle, primaryRectangle);
-        assertTrue(rectanglesAreIntersecting);
-        assertTrue(invertedRectanglesAreIntersecting);
+        ArrayList<Point> intersectionPoints = RectangleAnalyzer.doRectanglesIntersect(primaryRectangle, otherRectangle);
+        System.out.println(intersectionPoints);
 
+        assertEquals(intersectionPoints.size(), 2);
     }
 
     @Test
-    void doRectanglesIntersectTop() throws Rectangle.RectangleException {
+    void intersectingRectanglesTop() throws Rectangle.RectangleException {
         ArrayList<Corner> otherRectangleCorners = new ArrayList<>();
         otherRectangleCorners.add(new Corner(-5, 5));
         otherRectangleCorners.add(new Corner(-5, 15));
@@ -152,11 +146,10 @@ class RectangleAnalyzerTest {
 
         Rectangle otherRectangle = new Rectangle(otherRectangleCorners);
 
-        boolean rectanglesAreIntersecting = RectangleAnalyzer.doRectanglesIntersect(primaryRectangle, otherRectangle);
-        boolean invertedRectanglesAreIntersecting = RectangleAnalyzer.doRectanglesIntersect(otherRectangle, primaryRectangle);
-        assertTrue(rectanglesAreIntersecting);
-        assertTrue(invertedRectanglesAreIntersecting);
+        ArrayList<Point> intersectionPoints = RectangleAnalyzer.doRectanglesIntersect(primaryRectangle, otherRectangle);
+        System.out.println(intersectionPoints);
 
+        assertEquals(intersectionPoints.size(), 2);
     }
 
     @Test
@@ -169,8 +162,8 @@ class RectangleAnalyzerTest {
 
         Rectangle otherRectangle = new Rectangle(otherRectangleCorners);
 
-        boolean rectanglesAreIntersecting = RectangleAnalyzer.doRectanglesIntersect(primaryRectangle, otherRectangle);
-        assertFalse(rectanglesAreIntersecting);
+        ArrayList<Point> intersectionPoints = RectangleAnalyzer.doRectanglesIntersect(primaryRectangle, otherRectangle);
+        System.out.println(intersectionPoints);
 
-    }
+        assertEquals(intersectionPoints.size(), 0);    }
 }

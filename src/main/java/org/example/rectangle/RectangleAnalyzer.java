@@ -1,25 +1,30 @@
 package org.example.rectangle;
 
+import org.example.cartesian.Edge;
+import org.example.cartesian.Point;
+
+import java.util.ArrayList;
+import java.util.Collections;
+
 public class RectangleAnalyzer {
 
-    public static boolean doRectanglesIntersect(Rectangle primaryRectangle, Rectangle otherRectangle) {
+    public static ArrayList<Point> doRectanglesIntersect(Rectangle primaryRectangle, Rectangle otherRectangle) {
 
-        int cornersOfOtherRectangleContainedByPrimaryRectangle = 0;
+        ArrayList<Edge> primaryRectangleEdges = primaryRectangle.getEdges();
+        ArrayList<Edge> otherRectangleEdges = otherRectangle.getEdges();
 
-        if (primaryRectangle.contains(otherRectangle.getBottomLeftCorner())) {
-            cornersOfOtherRectangleContainedByPrimaryRectangle++;
-        }
-        if (primaryRectangle.contains(otherRectangle.getBottomRightCorner())) {
-            cornersOfOtherRectangleContainedByPrimaryRectangle++;
-        }
-        if (primaryRectangle.contains(otherRectangle.getTopLeftCorner())) {
-            cornersOfOtherRectangleContainedByPrimaryRectangle++;
-        }
-        if (primaryRectangle.contains(otherRectangle.getTopRightCorner())) {
-            cornersOfOtherRectangleContainedByPrimaryRectangle++;
-        }
+        ArrayList<Point> intersections = new ArrayList<>();
 
-        return cornersOfOtherRectangleContainedByPrimaryRectangle == 1 || cornersOfOtherRectangleContainedByPrimaryRectangle == 2;
+        primaryRectangleEdges.forEach((currentPrimaryRectangleEdge) -> {
+            otherRectangleEdges.forEach((currentOtherRectangleEdge) -> {
+                intersections.add(currentPrimaryRectangleEdge.intersects(currentOtherRectangleEdge));
+            });
+        });
+
+        intersections.removeAll(Collections.singleton(null));
+
+
+        return intersections;
     }
 
 
