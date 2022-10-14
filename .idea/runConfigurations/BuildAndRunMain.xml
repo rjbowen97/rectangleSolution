@@ -1,0 +1,10 @@
+<component name="ProjectRunConfigurationManager">
+  <configuration default="false" name="BuildAndRunMain" type="Application" factoryName="Application">
+    <option name="MAIN_CLASS_NAME" value="org.example.Main" />
+    <module name="NuvalenceSolution" />
+    <option name="PROGRAM_PARAMETERS" value="-10,-10 -10,10 10,-10 10,10 5,5 15,5 5,15 15,15" />
+    <method v="2">
+      <option name="Make" enabled="true" />
+    </method>
+  </configuration>
+</component>
