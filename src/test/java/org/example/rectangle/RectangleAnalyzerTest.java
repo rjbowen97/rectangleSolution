@@ -7,6 +7,7 @@ import org.junit.jupiter.api.Test;
 import java.util.ArrayList;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertTrue;
 
 class RectangleAnalyzerTest {
 
@@ -37,8 +38,8 @@ class RectangleAnalyzerTest {
         System.out.println(intersectionPoints);
 
         assertEquals(2, intersectionPoints.size());
-        assertEquals(new Point(0, 0), intersectionPoints.get(0));
-        assertEquals(new Point(0, 0), intersectionPoints.get(1));
+        assertTrue(intersectionPoints.contains(new Point(5, 10)));
+        assertTrue(intersectionPoints.contains(new Point(10, 5)));
 
     }
 
@@ -56,8 +57,8 @@ class RectangleAnalyzerTest {
         System.out.println(intersectionPoints);
 
         assertEquals(2, intersectionPoints.size());
-        assertEquals(new Point(0, 0), intersectionPoints.get(0));
-        assertEquals(new Point(0, 0), intersectionPoints.get(1));
+        assertTrue(intersectionPoints.contains(new Point(10, 5)));
+        assertTrue(intersectionPoints.contains(new Point(10, -5)));
     }
 
     @Test
@@ -74,8 +75,8 @@ class RectangleAnalyzerTest {
         System.out.println(intersectionPoints);
 
         assertEquals(2, intersectionPoints.size());
-        assertEquals(new Point(0, 0), intersectionPoints.get(0));
-        assertEquals(new Point(0, 0), intersectionPoints.get(1));
+        assertTrue(intersectionPoints.contains(new Point(5, -10)));
+        assertTrue(intersectionPoints.contains(new Point(10, -5)));
     }
 
     @Test
@@ -92,8 +93,8 @@ class RectangleAnalyzerTest {
         System.out.println(intersectionPoints);
 
         assertEquals(2, intersectionPoints.size());
-        assertEquals(new Point(0, 0), intersectionPoints.get(0));
-        assertEquals(new Point(0, 0), intersectionPoints.get(1));
+        assertTrue(intersectionPoints.contains(new Point(-5, -10)));
+        assertTrue(intersectionPoints.contains(new Point(5, -10)));
     }
 
     @Test
@@ -110,8 +111,8 @@ class RectangleAnalyzerTest {
         System.out.println(intersectionPoints);
 
         assertEquals(2, intersectionPoints.size());
-        assertEquals(new Point(0, 0), intersectionPoints.get(0));
-        assertEquals(new Point(0, 0), intersectionPoints.get(1));
+        assertTrue(intersectionPoints.contains(new Point(-5, -10)));
+        assertTrue(intersectionPoints.contains(new Point(-10, -5)));
     }
 
     @Test
@@ -128,8 +129,8 @@ class RectangleAnalyzerTest {
         System.out.println(intersectionPoints);
 
         assertEquals(2, intersectionPoints.size());
-        assertEquals(new Point(0, 0), intersectionPoints.get(0));
-        assertEquals(new Point(0, 0), intersectionPoints.get(1));
+        assertTrue(intersectionPoints.contains(new Point(-10, 5)));
+        assertTrue(intersectionPoints.contains(new Point(-10, -5)));
     }
 
     @Test
@@ -146,8 +147,8 @@ class RectangleAnalyzerTest {
         System.out.println(intersectionPoints);
 
         assertEquals(2, intersectionPoints.size());
-        assertEquals(new Point(0, 0), intersectionPoints.get(0));
-        assertEquals(new Point(0, 0), intersectionPoints.get(1));
+        assertTrue(intersectionPoints.contains(new Point(-10, 5)));
+        assertTrue(intersectionPoints.contains(new Point(-5, 10)));
     }
 
     @Test
@@ -164,8 +165,8 @@ class RectangleAnalyzerTest {
         System.out.println(intersectionPoints);
 
         assertEquals(2, intersectionPoints.size());
-        assertEquals(new Point(0, 0), intersectionPoints.get(0));
-        assertEquals(new Point(0, 0), intersectionPoints.get(1));
+        assertTrue(intersectionPoints.contains(new Point(-5, 10)));
+        assertTrue(intersectionPoints.contains(new Point(5, 10)));
     }
 
     @Test
