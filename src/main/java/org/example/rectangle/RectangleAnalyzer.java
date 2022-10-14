@@ -4,6 +4,7 @@ import org.example.cartesian.Edge;
 import org.example.cartesian.Point;
 
 import java.util.ArrayList;
+import java.util.HashSet;
 import java.util.Objects;
 import java.util.concurrent.atomic.AtomicInteger;
 
@@ -39,24 +40,36 @@ public class RectangleAnalyzer {
         return cornersContainedByPrimaryRectangle.get() == 4;
     }
 
-    public static ArrayList<AdjacencyType> getRectangleAdjacencies(Rectangle primaryRectangle, Rectangle otherRectangle) {
+    public static HashSet<AdjacencyType> getRectangleAdjacencies(Rectangle primaryRectangle, Rectangle otherRectangle) {
         ArrayList<Edge> primaryRectangleEdges = primaryRectangle.getEdges();
         ArrayList<Edge> otherRectangleEdges = otherRectangle.getEdges();
 
-        ArrayList<AdjacencyType> adjacencies = new ArrayList<>();
+        HashSet<AdjacencyType> adjacencies = new HashSet<>();
 
         primaryRectangleEdges.forEach((currentPrimaryRectangleEdge) -> {
             otherRectangleEdges.forEach((currentOtherRectangleEdge) -> {
-                adjacencies.add(currentPrimaryRectangleEdge.isAdjacentTo(currentOtherRectangleEdge));
+                AdjacencyType currentEdgeAdjacencyType = currentPrimaryRectangleEdge.isAdjacentTo(currentOtherRectangleEdge);
+                if (currentEdgeAdjacencyType != AdjacencyType.NONE) {
+                    adjacencies.add(currentEdgeAdjacencyType);
+                }
             });
         });
+
+        if (adjacencies.size() == 0) {
+           otherRectangleEdges.forEach((currentOtherRectangleEdge) -> {
+            primaryRectangleEdges.forEach((currentPrimaryRectangleEdge) -> {
+                AdjacencyType currentEdgeAdjacencyType = currentOtherRectangleEdge.isAdjacentTo(currentPrimaryRectangleEdge);
+                if (currentEdgeAdjacencyType != AdjacencyType.NONE) {
+                    adjacencies.add(currentEdgeAdjacencyType);
+                }
+            });
+        });
+        }
 
         return adjacencies;
 
 
     }
-
-
 
 
 }
