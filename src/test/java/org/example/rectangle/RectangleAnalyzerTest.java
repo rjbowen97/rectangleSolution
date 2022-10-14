@@ -35,11 +35,17 @@ class RectangleAnalyzerTest {
         Rectangle otherRectangle = new Rectangle(otherRectangleCorners);
 
         ArrayList<Point> intersectionPoints = RectangleAnalyzer.doRectanglesIntersect(primaryRectangle, otherRectangle);
+        ArrayList<Point> invertedIntersectionPoints = RectangleAnalyzer.doRectanglesIntersect(otherRectangle, primaryRectangle);
         System.out.println(intersectionPoints);
+        System.out.println(invertedIntersectionPoints);
 
         assertEquals(2, intersectionPoints.size());
         assertTrue(intersectionPoints.contains(new Point(5, 10)));
         assertTrue(intersectionPoints.contains(new Point(10, 5)));
+
+        assertEquals(2, invertedIntersectionPoints.size());
+        assertTrue(invertedIntersectionPoints.contains(new Point(5, 10)));
+        assertTrue(invertedIntersectionPoints.contains(new Point(10, 5)));
 
     }
 
@@ -54,11 +60,17 @@ class RectangleAnalyzerTest {
         Rectangle otherRectangle = new Rectangle(otherRectangleCorners);
 
         ArrayList<Point> intersectionPoints = RectangleAnalyzer.doRectanglesIntersect(primaryRectangle, otherRectangle);
+        ArrayList<Point> invertedIntersectionPoints = RectangleAnalyzer.doRectanglesIntersect(otherRectangle, primaryRectangle);
         System.out.println(intersectionPoints);
+        System.out.println(invertedIntersectionPoints);
 
         assertEquals(2, intersectionPoints.size());
         assertTrue(intersectionPoints.contains(new Point(10, 5)));
         assertTrue(intersectionPoints.contains(new Point(10, -5)));
+
+        assertEquals(2, invertedIntersectionPoints.size());
+        assertTrue(invertedIntersectionPoints.contains(new Point(10, 5)));
+        assertTrue(invertedIntersectionPoints.contains(new Point(10, -5)));
     }
 
     @Test
@@ -72,11 +84,17 @@ class RectangleAnalyzerTest {
         Rectangle otherRectangle = new Rectangle(otherRectangleCorners);
 
         ArrayList<Point> intersectionPoints = RectangleAnalyzer.doRectanglesIntersect(primaryRectangle, otherRectangle);
+        ArrayList<Point> invertedIntersectionPoints = RectangleAnalyzer.doRectanglesIntersect(otherRectangle, primaryRectangle);
         System.out.println(intersectionPoints);
+        System.out.println(invertedIntersectionPoints);
 
         assertEquals(2, intersectionPoints.size());
         assertTrue(intersectionPoints.contains(new Point(5, -10)));
         assertTrue(intersectionPoints.contains(new Point(10, -5)));
+
+        assertEquals(2, invertedIntersectionPoints.size());
+        assertTrue(invertedIntersectionPoints.contains(new Point(5, -10)));
+        assertTrue(invertedIntersectionPoints.contains(new Point(10, -5)));
     }
 
     @Test
@@ -90,11 +108,17 @@ class RectangleAnalyzerTest {
         Rectangle otherRectangle = new Rectangle(otherRectangleCorners);
 
         ArrayList<Point> intersectionPoints = RectangleAnalyzer.doRectanglesIntersect(primaryRectangle, otherRectangle);
+        ArrayList<Point> invertedIntersectionPoints = RectangleAnalyzer.doRectanglesIntersect(otherRectangle, primaryRectangle);
         System.out.println(intersectionPoints);
+        System.out.println(invertedIntersectionPoints);
 
         assertEquals(2, intersectionPoints.size());
         assertTrue(intersectionPoints.contains(new Point(-5, -10)));
         assertTrue(intersectionPoints.contains(new Point(5, -10)));
+
+        assertEquals(2, invertedIntersectionPoints.size());
+        assertTrue(invertedIntersectionPoints.contains(new Point(-5, -10)));
+        assertTrue(invertedIntersectionPoints.contains(new Point(5, -10)));
     }
 
     @Test
@@ -108,11 +132,17 @@ class RectangleAnalyzerTest {
         Rectangle otherRectangle = new Rectangle(otherRectangleCorners);
 
         ArrayList<Point> intersectionPoints = RectangleAnalyzer.doRectanglesIntersect(primaryRectangle, otherRectangle);
+        ArrayList<Point> invertedIntersectionPoints = RectangleAnalyzer.doRectanglesIntersect(otherRectangle, primaryRectangle);
         System.out.println(intersectionPoints);
+        System.out.println(invertedIntersectionPoints);
 
         assertEquals(2, intersectionPoints.size());
         assertTrue(intersectionPoints.contains(new Point(-5, -10)));
         assertTrue(intersectionPoints.contains(new Point(-10, -5)));
+
+        assertEquals(2, invertedIntersectionPoints.size());
+        assertTrue(invertedIntersectionPoints.contains(new Point(-5, -10)));
+        assertTrue(invertedIntersectionPoints.contains(new Point(-10, -5)));
     }
 
     @Test
@@ -126,11 +156,17 @@ class RectangleAnalyzerTest {
         Rectangle otherRectangle = new Rectangle(otherRectangleCorners);
 
         ArrayList<Point> intersectionPoints = RectangleAnalyzer.doRectanglesIntersect(primaryRectangle, otherRectangle);
+        ArrayList<Point> invertedIntersectionPoints = RectangleAnalyzer.doRectanglesIntersect(otherRectangle, primaryRectangle);
         System.out.println(intersectionPoints);
+        System.out.println(invertedIntersectionPoints);
 
         assertEquals(2, intersectionPoints.size());
         assertTrue(intersectionPoints.contains(new Point(-10, 5)));
         assertTrue(intersectionPoints.contains(new Point(-10, -5)));
+
+        assertEquals(2, invertedIntersectionPoints.size());
+        assertTrue(invertedIntersectionPoints.contains(new Point(-10, 5)));
+        assertTrue(invertedIntersectionPoints.contains(new Point(-10, -5)));
     }
 
     @Test
@@ -144,11 +180,17 @@ class RectangleAnalyzerTest {
         Rectangle otherRectangle = new Rectangle(otherRectangleCorners);
 
         ArrayList<Point> intersectionPoints = RectangleAnalyzer.doRectanglesIntersect(primaryRectangle, otherRectangle);
+        ArrayList<Point> invertedIntersectionPoints = RectangleAnalyzer.doRectanglesIntersect(otherRectangle, primaryRectangle);
         System.out.println(intersectionPoints);
+        System.out.println(invertedIntersectionPoints);
 
         assertEquals(2, intersectionPoints.size());
         assertTrue(intersectionPoints.contains(new Point(-10, 5)));
         assertTrue(intersectionPoints.contains(new Point(-5, 10)));
+
+        assertEquals(2, invertedIntersectionPoints.size());
+        assertTrue(invertedIntersectionPoints.contains(new Point(-10, 5)));
+        assertTrue(invertedIntersectionPoints.contains(new Point(-5, 10)));
     }
 
     @Test
@@ -162,11 +204,17 @@ class RectangleAnalyzerTest {
         Rectangle otherRectangle = new Rectangle(otherRectangleCorners);
 
         ArrayList<Point> intersectionPoints = RectangleAnalyzer.doRectanglesIntersect(primaryRectangle, otherRectangle);
+        ArrayList<Point> invertedIntersectionPoints = RectangleAnalyzer.doRectanglesIntersect(otherRectangle, primaryRectangle);
         System.out.println(intersectionPoints);
+        System.out.println(invertedIntersectionPoints);
 
         assertEquals(2, intersectionPoints.size());
         assertTrue(intersectionPoints.contains(new Point(-5, 10)));
         assertTrue(intersectionPoints.contains(new Point(5, 10)));
+
+        assertEquals(2, invertedIntersectionPoints.size());
+        assertTrue(invertedIntersectionPoints.contains(new Point(-5, 10)));
+        assertTrue(invertedIntersectionPoints.contains(new Point(5, 10)));
     }
 
     @Test
@@ -180,8 +228,11 @@ class RectangleAnalyzerTest {
         Rectangle otherRectangle = new Rectangle(otherRectangleCorners);
 
         ArrayList<Point> intersectionPoints = RectangleAnalyzer.doRectanglesIntersect(primaryRectangle, otherRectangle);
+        ArrayList<Point> invertedIntersectionPoints = RectangleAnalyzer.doRectanglesIntersect(otherRectangle, primaryRectangle);
         System.out.println(intersectionPoints);
+        System.out.println(invertedIntersectionPoints);
 
         assertEquals(intersectionPoints.size(), 0);
+        assertEquals(invertedIntersectionPoints.size(), 0);
     }
 }
