@@ -50,6 +50,16 @@ class RectangleAnalyzerTest {
         assertFalse(RectangleAnalyzer.doesRectangleContainOtherRectangle(primaryRectangle, otherRectangle));
         assertFalse(RectangleAnalyzer.doesRectangleContainOtherRectangle(otherRectangle, primaryRectangle));
 
+        HashSet<AdjacencyType> rectangleAdjacencies = RectangleAnalyzer.getRectangleAdjacencies(primaryRectangle, otherRectangle);
+        HashSet<AdjacencyType> invertedRectangleAdjacencies = RectangleAnalyzer.getRectangleAdjacencies(otherRectangle, primaryRectangle);
+        System.out.println(rectangleAdjacencies);
+
+        assertEquals(1, rectangleAdjacencies.size());
+        assertEquals(1, invertedRectangleAdjacencies.size());
+        assertTrue(rectangleAdjacencies.contains(AdjacencyType.NONE));
+        assertTrue(invertedRectangleAdjacencies.contains(AdjacencyType.NONE));
+
+
     }
 
     @Test
@@ -77,6 +87,16 @@ class RectangleAnalyzerTest {
 
         assertFalse(RectangleAnalyzer.doesRectangleContainOtherRectangle(primaryRectangle, otherRectangle));
         assertFalse(RectangleAnalyzer.doesRectangleContainOtherRectangle(otherRectangle, primaryRectangle));
+
+        HashSet<AdjacencyType> rectangleAdjacencies = RectangleAnalyzer.getRectangleAdjacencies(primaryRectangle, otherRectangle);
+        HashSet<AdjacencyType> invertedRectangleAdjacencies = RectangleAnalyzer.getRectangleAdjacencies(otherRectangle, primaryRectangle);
+        System.out.println(rectangleAdjacencies);
+
+        assertEquals(1, rectangleAdjacencies.size());
+        assertEquals(1, invertedRectangleAdjacencies.size());
+        assertTrue(rectangleAdjacencies.contains(AdjacencyType.NONE));
+        assertTrue(invertedRectangleAdjacencies.contains(AdjacencyType.NONE));
+
     }
 
     @Test
@@ -104,6 +124,16 @@ class RectangleAnalyzerTest {
 
         assertFalse(RectangleAnalyzer.doesRectangleContainOtherRectangle(primaryRectangle, otherRectangle));
         assertFalse(RectangleAnalyzer.doesRectangleContainOtherRectangle(otherRectangle, primaryRectangle));
+
+        HashSet<AdjacencyType> rectangleAdjacencies = RectangleAnalyzer.getRectangleAdjacencies(primaryRectangle, otherRectangle);
+        HashSet<AdjacencyType> invertedRectangleAdjacencies = RectangleAnalyzer.getRectangleAdjacencies(otherRectangle, primaryRectangle);
+        System.out.println(rectangleAdjacencies);
+
+        assertEquals(1, rectangleAdjacencies.size());
+        assertEquals(1, invertedRectangleAdjacencies.size());
+        assertTrue(rectangleAdjacencies.contains(AdjacencyType.NONE));
+        assertTrue(invertedRectangleAdjacencies.contains(AdjacencyType.NONE));
+
     }
 
     @Test
@@ -131,6 +161,16 @@ class RectangleAnalyzerTest {
 
         assertFalse(RectangleAnalyzer.doesRectangleContainOtherRectangle(primaryRectangle, otherRectangle));
         assertFalse(RectangleAnalyzer.doesRectangleContainOtherRectangle(otherRectangle, primaryRectangle));
+
+        HashSet<AdjacencyType> rectangleAdjacencies = RectangleAnalyzer.getRectangleAdjacencies(primaryRectangle, otherRectangle);
+        HashSet<AdjacencyType> invertedRectangleAdjacencies = RectangleAnalyzer.getRectangleAdjacencies(otherRectangle, primaryRectangle);
+        System.out.println(rectangleAdjacencies);
+
+        assertEquals(1, rectangleAdjacencies.size());
+        assertEquals(1, invertedRectangleAdjacencies.size());
+        assertTrue(rectangleAdjacencies.contains(AdjacencyType.NONE));
+        assertTrue(invertedRectangleAdjacencies.contains(AdjacencyType.NONE));
+
     }
 
     @Test
@@ -158,6 +198,16 @@ class RectangleAnalyzerTest {
 
         assertFalse(RectangleAnalyzer.doesRectangleContainOtherRectangle(primaryRectangle, otherRectangle));
         assertFalse(RectangleAnalyzer.doesRectangleContainOtherRectangle(otherRectangle, primaryRectangle));
+
+        HashSet<AdjacencyType> rectangleAdjacencies = RectangleAnalyzer.getRectangleAdjacencies(primaryRectangle, otherRectangle);
+        HashSet<AdjacencyType> invertedRectangleAdjacencies = RectangleAnalyzer.getRectangleAdjacencies(otherRectangle, primaryRectangle);
+        System.out.println(rectangleAdjacencies);
+
+        assertEquals(1, rectangleAdjacencies.size());
+        assertEquals(1, invertedRectangleAdjacencies.size());
+        assertTrue(rectangleAdjacencies.contains(AdjacencyType.NONE));
+        assertTrue(invertedRectangleAdjacencies.contains(AdjacencyType.NONE));
+
     }
 
     @Test
@@ -185,6 +235,16 @@ class RectangleAnalyzerTest {
 
         assertFalse(RectangleAnalyzer.doesRectangleContainOtherRectangle(primaryRectangle, otherRectangle));
         assertFalse(RectangleAnalyzer.doesRectangleContainOtherRectangle(otherRectangle, primaryRectangle));
+
+        HashSet<AdjacencyType> rectangleAdjacencies = RectangleAnalyzer.getRectangleAdjacencies(primaryRectangle, otherRectangle);
+        HashSet<AdjacencyType> invertedRectangleAdjacencies = RectangleAnalyzer.getRectangleAdjacencies(otherRectangle, primaryRectangle);
+        System.out.println(rectangleAdjacencies);
+
+        assertEquals(1, rectangleAdjacencies.size());
+        assertEquals(1, invertedRectangleAdjacencies.size());
+        assertTrue(rectangleAdjacencies.contains(AdjacencyType.NONE));
+        assertTrue(invertedRectangleAdjacencies.contains(AdjacencyType.NONE));
+
     }
 
     @Test
@@ -212,6 +272,16 @@ class RectangleAnalyzerTest {
 
         assertFalse(RectangleAnalyzer.doesRectangleContainOtherRectangle(primaryRectangle, otherRectangle));
         assertFalse(RectangleAnalyzer.doesRectangleContainOtherRectangle(otherRectangle, primaryRectangle));
+
+        HashSet<AdjacencyType> rectangleAdjacencies = RectangleAnalyzer.getRectangleAdjacencies(primaryRectangle, otherRectangle);
+        HashSet<AdjacencyType> invertedRectangleAdjacencies = RectangleAnalyzer.getRectangleAdjacencies(otherRectangle, primaryRectangle);
+        System.out.println(rectangleAdjacencies);
+
+        assertEquals(1, rectangleAdjacencies.size());
+        assertEquals(1, invertedRectangleAdjacencies.size());
+        assertTrue(rectangleAdjacencies.contains(AdjacencyType.NONE));
+        assertTrue(invertedRectangleAdjacencies.contains(AdjacencyType.NONE));
+
     }
 
     @Test
@@ -239,6 +309,16 @@ class RectangleAnalyzerTest {
 
         assertFalse(RectangleAnalyzer.doesRectangleContainOtherRectangle(primaryRectangle, otherRectangle));
         assertFalse(RectangleAnalyzer.doesRectangleContainOtherRectangle(otherRectangle, primaryRectangle));
+
+        HashSet<AdjacencyType> rectangleAdjacencies = RectangleAnalyzer.getRectangleAdjacencies(primaryRectangle, otherRectangle);
+        HashSet<AdjacencyType> invertedRectangleAdjacencies = RectangleAnalyzer.getRectangleAdjacencies(otherRectangle, primaryRectangle);
+        System.out.println(rectangleAdjacencies);
+
+        assertEquals(1, rectangleAdjacencies.size());
+        assertEquals(1, invertedRectangleAdjacencies.size());
+        assertTrue(rectangleAdjacencies.contains(AdjacencyType.NONE));
+        assertTrue(invertedRectangleAdjacencies.contains(AdjacencyType.NONE));
+
     }
 
     @Test

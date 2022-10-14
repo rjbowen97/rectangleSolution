@@ -66,6 +66,10 @@ public class RectangleAnalyzer {
             });
         }
 
+        if (adjacencies.size() == 0) {
+            adjacencies.add(AdjacencyType.NONE);
+        }
+
         return adjacencies;
 
 
