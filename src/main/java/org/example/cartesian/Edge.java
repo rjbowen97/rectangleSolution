@@ -14,7 +14,7 @@ public class Edge {
     }
 
     public Point intersects(Edge otherEdge) {
-        if (this.start.getX() == this.end.getX()) {
+        if (isVertical()) {
             if (this.start.getX() > otherEdge.getStart().getX() && this.end.getX() < otherEdge.getEnd().getX()) {
                 if (this.start.getY() < otherEdge.getStart().getY() && this.end.getY() > otherEdge.getStart().getY()) {
                     return new Point(this.start.getX(), otherEdge.getStart().getY());
@@ -22,7 +22,7 @@ public class Edge {
             }
         }
 
-        if (this.start.getY() == this.end.getY()) {
+        if (isHorizontal()) {
             if (this.start.getY() > otherEdge.getStart().getY() && this.end.getY() < otherEdge.getEnd().getY()) {
                 if (this.start.getX() < otherEdge.getStart().getX() && this.end.getX() > otherEdge.getStart().getX()) {
                     return new Point(otherEdge.getStart().getX(), this.start.getY());
@@ -33,69 +33,71 @@ public class Edge {
         return null;
     }
 
+    private boolean canOverlapVerticallyWith(Edge otherEdge) {
+        return isVertical()
+                && otherEdge.isVertical()
+                && this.start.getX() == otherEdge.getStart().getX();
+
+
+    }
+
+    private boolean canOverlapHorizontallyWith(Edge otherEdge) {
+        return isHorizontal()
+                && otherEdge.isHorizontal()
+                && this.start.getY() == otherEdge.getStart().getY();
+
+
+    }
+
     public AdjacencyType isAdjacentTo(Edge otherEdge) {
         if (this.equals(otherEdge)) {
             return AdjacencyType.PROPER;
         }
 
-        if (this.start.getX() == this.end.getX()) {
-            if (otherEdge.getStart().getX() == otherEdge.getEnd().getX()) {
-                if (this.start.getX() == otherEdge.getStart().getX()) {
-                    if (this.start.getY() > otherEdge.getStart().getY() && this.end.getY() < otherEdge.getEnd().getY()) {
-                        return AdjacencyType.SUB_LINE;
-                    }
+        if (canOverlapVerticallyWith(otherEdge)) {
+            if (this.start.getY() > otherEdge.getStart().getY() && this.end.getY() < otherEdge.getEnd().getY()) {
+                return AdjacencyType.SUB_LINE;
+            }
+            if (this.start.getY() > otherEdge.getStart().getY() && this.end.getY() > otherEdge.getEnd().getY()) {
+                if (this.start.getY() < otherEdge.getEnd().getY()) {
+                    return AdjacencyType.PARTIAL;
+                }
 
+            }
+            if (this.start.getY() < otherEdge.getStart().getY() && this.end.getY() < otherEdge.getEnd().getY()) {
+                if (this.end.getY() > otherEdge.getStart().getY()) {
+                    return AdjacencyType.PARTIAL;
                 }
             }
+
         }
 
-        if (this.start.getY() == this.end.getY()) {
-            if (otherEdge.getStart().getY() == otherEdge.getEnd().getY()) {
-                if (this.start.getY() == otherEdge.getStart().getY()) {
-                    if (this.start.getX() > otherEdge.getStart().getX() && this.end.getX() < otherEdge.getEnd().getX()) {
-                        return AdjacencyType.SUB_LINE;
-                    }
+        if (canOverlapHorizontallyWith(otherEdge)) {
+            if (this.start.getX() > otherEdge.getStart().getX() && this.end.getX() < otherEdge.getEnd().getX()) {
+                return AdjacencyType.SUB_LINE;
+            }
 
+            if (this.start.getX() > otherEdge.getStart().getX() && this.end.getX() > otherEdge.getEnd().getX()) {
+                if (this.start.getX() < otherEdge.getEnd().getX()) {
+                    return AdjacencyType.PARTIAL;
                 }
             }
-        }
-
-        if (this.start.getX() == this.end.getX()) {
-            if (otherEdge.getStart().getX() == otherEdge.getEnd().getX()) {
-                if (this.start.getX() == otherEdge.getStart().getX()) {
-                    if (this.start.getY() > otherEdge.getStart().getY() && this.end.getY() > otherEdge.getEnd().getY()) {
-                        if (this.start.getY() < otherEdge.getEnd().getY()) {
-                            return AdjacencyType.PARTIAL;
-                        }
-
-                    }
-                    if (this.start.getY() < otherEdge.getStart().getY() && this.end.getY() < otherEdge.getEnd().getY()) {
-                        if (this.end.getY() > otherEdge.getStart().getY()) {
-                            return AdjacencyType.PARTIAL;
-                        }
-                    }
-                }
-            }
-        }
-
-        if (this.start.getY() == this.end.getY()) {
-            if (otherEdge.getStart().getY() == otherEdge.getEnd().getY()) {
-                if (this.start.getY() == otherEdge.getStart().getY()) {
-                    if (this.start.getX() > otherEdge.getStart().getX() && this.end.getX() > otherEdge.getEnd().getX()) {
-                        if (this.start.getX() < otherEdge.getEnd().getX()) {
-                            return AdjacencyType.PARTIAL;
-                        }
-                    }
-                    if (this.start.getX() < otherEdge.getStart().getX() && this.end.getX() < otherEdge.getEnd().getX()) {
-                        if (this.end.getX() > otherEdge.getStart().getX()) {
-                            return AdjacencyType.PARTIAL;
-                        }
-                    }
+            if (this.start.getX() < otherEdge.getStart().getX() && this.end.getX() < otherEdge.getEnd().getX()) {
+                if (this.end.getX() > otherEdge.getStart().getX()) {
+                    return AdjacencyType.PARTIAL;
                 }
             }
         }
 
         return AdjacencyType.NONE;
+    }
+
+    public boolean isHorizontal() {
+        return this.start.getY() == this.end.getY();
+    }
+
+    public boolean isVertical() {
+        return this.start.getX() == this.end.getX();
     }
 
     @Override
