@@ -1,5 +1,7 @@
 package org.example.cartesian;
 
+import org.example.rectangle.AdjacencyType;
+
 public class Edge {
     Point start;
     Point end;
@@ -28,6 +30,12 @@ public class Edge {
 
         return null;
     }
+
+    public AdjacencyType isAdjacentTo(Edge otherEdge) {
+        return AdjacencyType.NONE;
+    }
+
+
 
     public Point getStart() {
         return start;
