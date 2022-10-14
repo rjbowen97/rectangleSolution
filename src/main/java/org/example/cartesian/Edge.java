@@ -37,16 +37,12 @@ public class Edge {
         return isVertical()
                 && otherEdge.isVertical()
                 && this.start.getX() == otherEdge.getStart().getX();
-
-
     }
 
     private boolean canOverlapHorizontallyWith(Edge otherEdge) {
         return isHorizontal()
                 && otherEdge.isHorizontal()
                 && this.start.getY() == otherEdge.getStart().getY();
-
-
     }
 
     public AdjacencyType isAdjacentTo(Edge otherEdge) {
@@ -62,14 +58,12 @@ public class Edge {
                 if (this.start.getY() < otherEdge.getEnd().getY()) {
                     return AdjacencyType.PARTIAL;
                 }
-
             }
             if (this.start.getY() < otherEdge.getStart().getY() && this.end.getY() < otherEdge.getEnd().getY()) {
                 if (this.end.getY() > otherEdge.getStart().getY()) {
                     return AdjacencyType.PARTIAL;
                 }
             }
-
         }
 
         if (canOverlapHorizontallyWith(otherEdge)) {
@@ -121,15 +115,7 @@ public class Edge {
         return start;
     }
 
-    public void setStart(Point start) {
-        this.start = start;
-    }
-
     public Point getEnd() {
         return end;
-    }
-
-    public void setEnd(Point end) {
-        this.end = end;
     }
 }

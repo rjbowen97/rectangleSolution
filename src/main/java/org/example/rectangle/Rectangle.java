@@ -21,16 +21,6 @@ public class Rectangle {
         validateInputPoints(points);
         this.setPoints(points);
         this.setEdges();
-
-    }
-
-    private void setPoints(ArrayList<Point> points) {
-        points.sort(Point::compareTo);
-        this.bottomLeftPoint = points.get(0);
-        this.topRightPoint = points.get(3);
-        this.topLeftPoint = new Point(bottomLeftPoint.getX(), topRightPoint.getY());
-        this.bottomRightPoint = new Point(topRightPoint.getX(), bottomLeftPoint.getY());
-
     }
 
     private void setEdges() {
@@ -68,6 +58,14 @@ public class Rectangle {
         points.add(bottomRightPoint);
 
         return points;
+    }
+
+    private void setPoints(ArrayList<Point> points) {
+        points.sort(Point::compareTo);
+        this.bottomLeftPoint = points.get(0);
+        this.topRightPoint = points.get(3);
+        this.topLeftPoint = new Point(bottomLeftPoint.getX(), topRightPoint.getY());
+        this.bottomRightPoint = new Point(topRightPoint.getX(), bottomLeftPoint.getY());
     }
 
     public ArrayList<Edge> getEdges() {
@@ -113,7 +111,6 @@ public class Rectangle {
     public Point getBottomLeftPoint() {
         return bottomLeftPoint;
     }
-
 
     public Point getTopRightPoint() {
         return topRightPoint;

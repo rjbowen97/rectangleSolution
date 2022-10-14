@@ -71,9 +71,5 @@ public class RectangleAnalyzer {
         }
 
         return adjacencies;
-
-
     }
-
-
 }

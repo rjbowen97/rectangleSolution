@@ -31,14 +31,11 @@ class RectangleTest {
         tooManyPoints = new ArrayList<>(validRectanglePoints);
         tooManyPoints.add(new Point(1, -3));
 
-
         System.out.println(validRectanglePoints);
         System.out.println(tooManyPoints);
         System.out.println(tooFewPoints);
 
         System.out.println("END - Test Setup");
-
-
     }
 
     @Test
@@ -68,7 +65,6 @@ class RectangleTest {
 
         assertEquals(rectangle.getLeftEdge().getStart(), rectangle.getBottomLeftPoint());
         assertEquals(rectangle.getLeftEdge().getEnd(), rectangle.getTopLeftPoint());
-
     }
 
     @Test
@@ -78,7 +74,6 @@ class RectangleTest {
         duplicatePoints.add(new Point(1, 2));
         duplicatePoints.add(new Point(1, 2));
         duplicatePoints.add(new Point(1, 2));
-
 
         assertThrows(Rectangle.RectangleException.class, () -> {
             new Rectangle(duplicatePoints);

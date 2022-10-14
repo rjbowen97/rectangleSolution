@@ -58,8 +58,6 @@ class RectangleAnalyzerTest {
         assertEquals(1, invertedRectangleAdjacencies.size());
         assertTrue(rectangleAdjacencies.contains(AdjacencyType.NONE));
         assertTrue(invertedRectangleAdjacencies.contains(AdjacencyType.NONE));
-
-
     }
 
     @Test
@@ -96,7 +94,6 @@ class RectangleAnalyzerTest {
         assertEquals(1, invertedRectangleAdjacencies.size());
         assertTrue(rectangleAdjacencies.contains(AdjacencyType.NONE));
         assertTrue(invertedRectangleAdjacencies.contains(AdjacencyType.NONE));
-
     }
 
     @Test
@@ -133,7 +130,6 @@ class RectangleAnalyzerTest {
         assertEquals(1, invertedRectangleAdjacencies.size());
         assertTrue(rectangleAdjacencies.contains(AdjacencyType.NONE));
         assertTrue(invertedRectangleAdjacencies.contains(AdjacencyType.NONE));
-
     }
 
     @Test
@@ -170,7 +166,6 @@ class RectangleAnalyzerTest {
         assertEquals(1, invertedRectangleAdjacencies.size());
         assertTrue(rectangleAdjacencies.contains(AdjacencyType.NONE));
         assertTrue(invertedRectangleAdjacencies.contains(AdjacencyType.NONE));
-
     }
 
     @Test
@@ -207,7 +202,6 @@ class RectangleAnalyzerTest {
         assertEquals(1, invertedRectangleAdjacencies.size());
         assertTrue(rectangleAdjacencies.contains(AdjacencyType.NONE));
         assertTrue(invertedRectangleAdjacencies.contains(AdjacencyType.NONE));
-
     }
 
     @Test
@@ -244,7 +238,6 @@ class RectangleAnalyzerTest {
         assertEquals(1, invertedRectangleAdjacencies.size());
         assertTrue(rectangleAdjacencies.contains(AdjacencyType.NONE));
         assertTrue(invertedRectangleAdjacencies.contains(AdjacencyType.NONE));
-
     }
 
     @Test
@@ -281,7 +274,6 @@ class RectangleAnalyzerTest {
         assertEquals(1, invertedRectangleAdjacencies.size());
         assertTrue(rectangleAdjacencies.contains(AdjacencyType.NONE));
         assertTrue(invertedRectangleAdjacencies.contains(AdjacencyType.NONE));
-
     }
 
     @Test
@@ -318,7 +310,6 @@ class RectangleAnalyzerTest {
         assertEquals(1, invertedRectangleAdjacencies.size());
         assertTrue(rectangleAdjacencies.contains(AdjacencyType.NONE));
         assertTrue(invertedRectangleAdjacencies.contains(AdjacencyType.NONE));
-
     }
 
     @Test
@@ -341,7 +332,6 @@ class RectangleAnalyzerTest {
 
         assertFalse(RectangleAnalyzer.doesRectangleContainOtherRectangle(primaryRectangle, otherRectangle));
         assertFalse(RectangleAnalyzer.doesRectangleContainOtherRectangle(otherRectangle, primaryRectangle));
-
     }
 
     @Test
@@ -394,7 +384,6 @@ class RectangleAnalyzerTest {
 
         assertTrue(rectangleAdjacencies.contains(AdjacencyType.SUB_LINE));
         assertTrue(invertedRectangleAdjacencies.contains(AdjacencyType.SUB_LINE));
-
     }
 
     @Test
@@ -425,7 +414,6 @@ class RectangleAnalyzerTest {
 
         assertTrue(rectangleAdjacencies.contains(AdjacencyType.SUB_LINE));
         assertTrue(invertedRectangleAdjacencies.contains(AdjacencyType.SUB_LINE));
-
     }
 
     @Test
@@ -456,7 +444,6 @@ class RectangleAnalyzerTest {
 
         assertTrue(rectangleAdjacencies.contains(AdjacencyType.SUB_LINE));
         assertTrue(invertedRectangleAdjacencies.contains(AdjacencyType.SUB_LINE));
-
     }
 
     @Test
@@ -487,7 +474,6 @@ class RectangleAnalyzerTest {
 
         assertTrue(rectangleAdjacencies.contains(AdjacencyType.SUB_LINE));
         assertTrue(invertedRectangleAdjacencies.contains(AdjacencyType.SUB_LINE));
-
     }
 
     // PROPER Adjacency Tests
@@ -519,7 +505,6 @@ class RectangleAnalyzerTest {
 
         assertTrue(rectangleAdjacencies.contains(AdjacencyType.PROPER));
         assertTrue(invertedRectangleAdjacencies.contains(AdjacencyType.PROPER));
-
     }
 
     @Test
@@ -550,7 +535,6 @@ class RectangleAnalyzerTest {
 
         assertTrue(rectangleAdjacencies.contains(AdjacencyType.PROPER));
         assertTrue(invertedRectangleAdjacencies.contains(AdjacencyType.PROPER));
-
     }
 
     @Test
@@ -581,7 +565,6 @@ class RectangleAnalyzerTest {
 
         assertTrue(rectangleAdjacencies.contains(AdjacencyType.PROPER));
         assertTrue(invertedRectangleAdjacencies.contains(AdjacencyType.PROPER));
-
     }
 
     @Test
@@ -612,9 +595,7 @@ class RectangleAnalyzerTest {
 
         assertTrue(rectangleAdjacencies.contains(AdjacencyType.PROPER));
         assertTrue(invertedRectangleAdjacencies.contains(AdjacencyType.PROPER));
-
     }
-
 
     // PARTIAL Adjacency Tests
     @Test
@@ -645,7 +626,6 @@ class RectangleAnalyzerTest {
 
         assertTrue(rectangleAdjacencies.contains(AdjacencyType.PARTIAL));
         assertTrue(invertedRectangleAdjacencies.contains(AdjacencyType.PARTIAL));
-
     }
 
     @Test
@@ -676,7 +656,6 @@ class RectangleAnalyzerTest {
 
         assertTrue(rectangleAdjacencies.contains(AdjacencyType.PARTIAL));
         assertTrue(invertedRectangleAdjacencies.contains(AdjacencyType.PARTIAL));
-
     }
 
     @Test
@@ -707,7 +686,6 @@ class RectangleAnalyzerTest {
 
         assertTrue(rectangleAdjacencies.contains(AdjacencyType.PARTIAL));
         assertTrue(invertedRectangleAdjacencies.contains(AdjacencyType.PARTIAL));
-
     }
 
     @Test
@@ -738,8 +716,5 @@ class RectangleAnalyzerTest {
 
         assertTrue(rectangleAdjacencies.contains(AdjacencyType.PARTIAL));
         assertTrue(invertedRectangleAdjacencies.contains(AdjacencyType.PARTIAL));
-
     }
-
-
 }
