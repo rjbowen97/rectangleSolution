@@ -10,7 +10,22 @@ import java.util.Arrays;
 import java.util.HashSet;
 import java.util.List;
 
+/**
+ * The Main class of the application.
+ */
 public class Main {
+    /**
+     * Takes a user-inputted list of 8 coordinate pairs, which then are used to create 2 Rectangles.
+     * The function then outputs any intersection points between the two rectangles,
+     * if the primary rectangle contains the other rectangle, and the type of adjacency the primary rectangle has
+     * with the other rectangle.
+     *
+     * @param args A list of cartesian coordinates representing the corners of two rectangles. Each coordinate is
+     *             separated by a space, and each value within the coordinate is separated by a comma.
+     *             The primary rectangle is constructed from the first 4 coordinate pairs and the "other" rectangle is constructed
+     *             from the last 4 coordinate pairs.
+     *             e.g. "-10,-10 -10,10 10,-10 10,10 5,5 15,5 5,15 15,15"
+     */
     public static void main(String[] args) {
         ArrayList<Point> inputRectanglePoints = new ArrayList<>();
 
